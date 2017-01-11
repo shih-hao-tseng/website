@@ -1,1 +1,0 @@
-loadPages['home'] = true;loadLanguage(userLang);loadPages['home'] = false;
