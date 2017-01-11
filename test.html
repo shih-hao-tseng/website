@@ -7,7 +7,7 @@
 	<!-- Avoid archiving -->
 	<meta name="robots" content="noarchive" />
 	
-	<title id="title">曾士豪 (Shih-Hao Tseng)</title>
+	<title id="index-title">曾士豪 (Shih-Hao Tseng)</title>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	
@@ -16,6 +16,12 @@
 	<script src="js/pages/index.js"></script>
 </head>
 <body>
+
+<div id="index-language"></div>
+<select id="select-language" onchange="javascript:loadLanguage(this.value)">
+	<option value="en" selected>English</option>
+	<option value="zh-tw">正體中文</option>
+</select>
 
 </body>
 </html>
