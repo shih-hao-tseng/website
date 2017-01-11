@@ -1,0 +1,1 @@
+window.onload = function(){	loadPages['home'] = true;	loadLanguage(userLang);};window.onbeforeunload = function(){	loadPages['home'] = false;};

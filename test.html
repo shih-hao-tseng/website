@@ -13,20 +13,21 @@
 	
 	<script src="js/tools/global_variables.js"></script>
 	<script src="js/tools/language.js"></script>
+	<script src="js/tools/content.js"></script>
 	<script src="js/pages/index.js"></script>
 </head>
 <body>
-
-	<div class="my-name"></div>
-	<div class="my-title"></div>
-	<div class="my-affiliation"></div>
-	<div class="my-address"></div>
-
 	<div class="index-language"></div>
 	<select id="select-language" onchange="javascript:loadLanguage(this.value)">
 		<option value="en" selected>English</option>
 		<option value="zh">正體中文</option>
 	</select>
+
+	<select onclick="javascript:loadContent(this.value)">
+		<option value="home" selected>Home</option>
+	</select>
+
+	<div id="page-content"></div>
 
 </body>
 </html>
