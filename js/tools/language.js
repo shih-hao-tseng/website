@@ -1,0 +1,1 @@
+function initializeLanguage () {	userLang = (navigator.language || navigator.userLanguage).toLowerCase();	//alert ("The language is: " + userLang);}function loadLanguage () {	// for each in loadPages	// load data/languages/[userLang]/[loadPages].lan	// using the id to load content}

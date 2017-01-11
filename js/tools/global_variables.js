@@ -1,0 +1,1 @@
+var userLang;var loadPages = {};  // to support older version
