@@ -1,1 +1,1 @@
-var userLang;var loadPages = {};  // to support older versionvar jsonFile = new XMLHttpRequest();
+var userLang;var loadPages = {};  // to support older versionvar jsonFile = new XMLHttpRequest();var jsonFileContent;

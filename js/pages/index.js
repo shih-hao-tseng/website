@@ -1,1 +1,1 @@
-initializeLanguage();loadPages['index'] = true;loadPages['asd'] = true;loadLanguage();window.onbeforeunload = function(){	loadPages['index'] = false;};
+//initializeLanguage();userLang='jp';loadPages['index'] = true;loadLanguage();window.onbeforeunload = function(){	loadPages['index'] = false;};
