@@ -43,7 +43,7 @@ header{
 /*
  選項按鈕
 */
-#page-selector li p{
+#page-selector li div{
    color:white;
    font-size:26px;
 }
@@ -53,7 +53,7 @@ header{
    display:none;
 }
 
-#language-selector p, select{
+#language-selector div, select{
    display: inline-block;
    vertical-align: middle;
 }
