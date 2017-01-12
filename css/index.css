@@ -25,7 +25,7 @@ header{
 */
 #page-selector li{
    height:60px;
-   width:160px;
+   padding: 0 20px;
    display:table-cell;
    vertical-align:middle;
    cursor:pointer;
