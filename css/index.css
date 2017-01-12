@@ -48,3 +48,8 @@ header{
    height:80px;
    display:none;
 }
+
+#language-selector p, select{
+   display: inline-block;
+   vertical-align: middle;
+}
