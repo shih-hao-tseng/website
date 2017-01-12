@@ -1,0 +1,38 @@
+@font-face {
+	font-family: 'Academicons';
+	src:url('academicons-1.7.0/fonts/academicons.eot?v=1.7.0');
+	src:url('academicons-1.7.0/fonts/academicons.eot?v=1.7.0') format('embedded-opentype'),
+		url('academicons-1.7.0/fonts/academicons.ttf?v=1.7.0') format('truetype'),
+		url('academicons-1.7.0/fonts/academicons.woff?v=1.7.0') format('woff'),
+		url('academicons-1.7.0/fonts/academicons.svg?v=1.7.0#academicons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'FontAwesome';
+	src:url('font-awesome-4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0');
+	src:url('font-awesome-4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),
+		url('font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
+		url('font-awesome-4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+		url('font-awesome-4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
+		url('font-awesome-4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+.social-icon {
+	display:inline-block;
+	/*font-size:inherit;*/
+	font-size:2em;
+	text-rendering:auto;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+.ai{font:normal normal normal 14px/1 Academicons;}
+.ai-google-scholar:before {content: "\e900";}
+.ai-google-scholar-square:before {content: "\e901";}
+.ai-researchgate:before {content: "\e902";}
+.ai-researchgate-square:before {content: "\e903";}
+.fa{font: normal normal normal 14px/1 FontAwesome;}
+.fa-copyright:before {content: "\f1f9";}
+.fa-linkedin:before {content: "\f0e1";}
+.fa-linkedin-square:before {content: "\f08c";}
