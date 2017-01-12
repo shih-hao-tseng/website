@@ -1,9 +1,61 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="refresh" content="0;url=https://st688.github.io/website/pages/cornell_index.html">
+	<meta charset="UTF-8" />
+	<meta name="description" content="曾士豪 個人網站 (Shih-Hao Tseng's Personal Website)" />
+	<meta name="keywords" content="曾士豪, Shih-Hao Tseng, S.-H. Tseng" />
+	<!-- Avoid archiving -->
+	<meta name="robots" content="noarchive" />
+	
+	<title class="index-title">曾士豪 (Shih-Hao Tseng)</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+	<script src="js/tools/global_variables.js"></script>
+	<script src="js/tools/language.js"></script>
+	<script src="js/tools/content.js"></script>
+	<script src="js/index.js"></script>
+
+	<link rel="stylesheet" href="css/index.css"/>
+
+	<link rel="stylesheet" href="css/icons/icons.css"/>
 </head>
 <body>
-	Website under construction, please visit my <a href='https://st688.github.io/website/pages/cornell_index.html'>Cornell webpage</a>.
+<header>
+	<div class="left">
+		<div id="name-display"><div class="my-name"></div></div>
+	</div>
+	<div class="right">
+		<ul id="page-selector">
+			<li onclick="loadContent('home')"><div class="index-home"></div></li>
+			<li onclick="loadContent('publications')"><div class="index-publications"></div></li>
+			<li onclick="loadContent('courses')"><div class="index-courses"></div></li>
+			<!--<li onclick="loadContent('teaching')"><div class="index-teaching"></div></li>-->
+			<li id="language-selector"><div class="index-language"></div>
+			<select id="select-language" onchange="javascript:loadLanguage(this.value)">
+				<option value="en" selected>English</option>
+				<option value="zh">正體中文</option>
+			</select>
+			</li>
+		</ul>
+	</div>
+</header>
+
+<div id="footer-wrapper">
+<div id="header-fix" style="display: block;"></div>
+
+<div id="page-content"></div>
+</div>
+
+<footer>
+	<center>
+		<a href="https://www.linkedin.com/in/shih-hao-tseng-8b6449b0"><i class="social-icon fa fa-linkedin f-2x"></i></a>
+		<a href="https://scholar.google.com/citations?user=O11fmg4AAAAJ"><i class="social-icon ai ai-google-scholar f-2x"></i></a>
+		<a href="https://www.researchgate.net/profile/Shih_Hao_Tseng"><i class="social-icon ai ai-researchgate f-2x"></i></a>
+	</center>
+	<center>
+		<i class="social-icon fa fa-copyright"></i> 2017 <span class="my-name"></span><span class="index-copyright"></span>
+	</center>
+</footer>
 </body>
 </html>
