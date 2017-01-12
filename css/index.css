@@ -18,17 +18,11 @@ header{
    position: fixed;
    top: 0px;
 }
-#footer-wrapper{
-   min-height: 100%;
-   height: auto !important;
-   height: 100%;
-   margin: 0 auto -120px;
-}
 footer{
-   height: 100px;
+   height: 80px;
    color:white;
-   margin:0;
-   padding:10px;
+   margin:-120px 0 0 0;
+   padding:20px;
    width:100%;
    background-color:#CC0033;
    text-align:center;
@@ -85,10 +79,14 @@ footer a:hover{
    display: inline-block;
    vertical-align: middle;
 }
+#footer-wrapper{
+   min-height: 100%;
+}
 #header-fix{
    height:60px;
    display:none;
 }
 #page-content{
    margin:20px 5%;
+   padding-bottom: 120px;
 }
