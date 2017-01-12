@@ -19,7 +19,6 @@ header{
  導覽列項目框架
 */
 #page-selector{
-   display:table-cell;
    margin:0;
    padding:10px;
    list-style-type:none;
