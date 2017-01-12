@@ -2,7 +2,6 @@ body{
    margin: 0;
    overflow: scroll;
 }
-
 header{
    color:white;
    margin:0;
@@ -15,7 +14,6 @@ header{
    position: fixed;
    top: 0px;
 }
-
 footer{
    color:white;
    position:absolute;
@@ -26,33 +24,34 @@ footer{
    text-align:center;
    bottom: 0px;
 }
-
-/*
- 導覽列項目框架
-*/
+footer a{
+   color:#F0F0F0;
+}
+footer a:hover{
+   color:white;
+}
 .left{
    float:left;
 }
 .right{
    float:right;
 }
-
-/*
- 選項
-*/
 #name-display{
    height:60px;
    padding-left:20px;
    display: table-cell;
    vertical-align: middle;
 }
-
+#name-display div{
+   font-size:24px;
+   display: inline-block;
+   vertical-align: middle;
+}
 #page-selector{
    margin:0;
    padding:10px;
    list-style-type:none;
 }
-
 #page-selector li{
    height:40px;
    padding: 0 10px;
@@ -65,31 +64,18 @@ footer{
 #page-selector li:not(#language-selector):hover{
    background-color:#b01c2e;
 }
-
-/*
- 選項按鈕
-*/
 #page-selector li:not(#language-selector) div{
    font-size:22px;
 }
-
-#header-fix{
-   height:80px;
-   display:none;
-}
-
 #language-selector{
    cursor:default !important;
 }
-
 #language-selector div, select{
    font-size:18px;
    display: inline-block;
    vertical-align: middle;
 }
-
-#name-display div{
-   font-size:24px;
-   display: inline-block;
-   vertical-align: middle;
+#header-fix{
+   height:80px;
+   display:none;
 }
