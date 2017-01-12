@@ -26,12 +26,13 @@
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 }
-.ai{font:normal normal normal 2em/1 Academicons;}
+.f-2x {font-size:2em;}
+.ai{font:normal normal normal 14px/1 Academicons;}
 .ai-google-scholar:before {content: "\e900";}
 .ai-google-scholar-square:before {content: "\e901";}
 .ai-researchgate:before {content: "\e902";}
 .ai-researchgate-square:before {content: "\e903";}
-.fa{font: normal normal normal 2em/1 FontAwesome;}
+.fa{font: normal normal normal 14px/1 FontAwesome;}
 .fa-copyright:before {content: "\f1f9";}
 .fa-linkedin:before {content: "\f0e1";}
 .fa-linkedin-square:before {content: "\f08c";}
