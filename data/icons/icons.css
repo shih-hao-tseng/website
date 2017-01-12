@@ -26,7 +26,7 @@
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 }
-.f-2x {font-size:2em;}
+.f-2x {font-size:2em !important;}
 .ai{font:normal normal normal 14px/1 Academicons;}
 .ai-google-scholar:before {content: "\e900";}
 .ai-google-scholar-square:before {content: "\e901";}
