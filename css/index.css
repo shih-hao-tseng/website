@@ -2,9 +2,9 @@ html{
    height: 100%;
 }
 body{
+   height: 100%;
    margin: 0;
    overflow: scroll;
-   min-height: 100%;
 }
 header{
    color:white;
@@ -18,9 +18,15 @@ header{
    position: fixed;
    top: 0px;
 }
+#footer-wrapper{
+   min-height: 100%;
+   height: auto !important;
+   height: 100%;
+   margin: 0 auto -120px;
+}
 footer{
+   height: 100px;
    color:white;
-   position:absolute;
    margin:0;
    padding:10px;
    width:100%;
