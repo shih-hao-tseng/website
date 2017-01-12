@@ -76,6 +76,9 @@ footer a:hover{
    vertical-align: middle;
 }
 #header-fix{
-   height:80px;
+   height:60px;
    display:none;
+}
+#page-content{
+   margin:20px 5%;
 }
