@@ -1,1 +1,1 @@
-window.onload = function(){	initializeLanguage();	loadPages['index'] = true;	loadContent($('#select-page').val());};window.onbeforeunload = function(){	loadPages['index'] = false;};
+window.onload = function(){	initializeLanguage();	loadPages['index'] = true;	loadContent(prevPage);};window.onbeforeunload = function(){	loadPages['index'] = false;};

@@ -19,19 +19,21 @@
 	<link rel="stylesheet" href="data/icons/icons.css"/>
 </head>
 <body>
-	<div class="index-language"></div>
+<header>
+	<ul id="page-selector">
+		<li class="index-home" onclick="loadLanguage('home')" selected></li>
+		<li class="index-publications" onclick="loadLanguage('publications')" selected></li>
+		<li class="index-teaching" onclick="loadLanguage('teaching')" selected></li>
+	</ul>
+	<div id="language-selector"><p class="index-language"></p>
 	<select id="select-language" onchange="javascript:loadLanguage(this.value)">
 		<option value="en" selected>English</option>
 		<option value="zh">正體中文</option>
 	</select>
+	</div>
+</header>
 
-	<select id="select-page" onchange="javascript:loadContent(this.value)">
-		<option class="index-home" value="home" selected></option>
-		<option class="index-publications" value="publications"></option>
-		<option class="index-teaching" value="teaching"></option>
-	</select>
-
-	<div id="page-content"></div>
+<div id="page-content"></div>
 
 <footer>
 	<center>

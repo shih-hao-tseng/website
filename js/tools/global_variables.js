@@ -1,1 +1,1 @@
-var userLang;var prevPage = "home";  // default pagevar loadPages = {};  // to support older versionvar jsonFile = new XMLHttpRequest();var jsonFileContent;
+var userLang;var prevPage = "home";  // default pagevar loadPages = {};  // to support older versionvar jsonFile = new XMLHttpRequest();var jsonFileContent;
