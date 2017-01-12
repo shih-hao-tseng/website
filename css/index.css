@@ -1,3 +1,8 @@
+body{
+   margin: 0;
+   overflow: scroll;
+}
+
 header{
    margin:0;
    padding:0;
