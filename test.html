@@ -20,10 +20,10 @@
 </head>
 <body>
 <header>
-	<ul id="page-selector">
-		<li class="index-home" onclick="loadContent('home')" selected></li>
-		<li class="index-publications" onclick="loadContent('publications')" selected></li>
-		<li class="index-teaching" onclick="loadContent('teaching')" selected></li>
+	<ul id="page-selector" onclick="loadContent(this.value)">
+		<li class="index-home" value="home"></li>
+		<li class="index-publications" value="publications"></li>
+		<li class="index-teaching" value="teaching"></li>
 	</ul>
 	<div id="language-selector"><p class="index-language"></p>
 	<select id="select-language" onchange="javascript:loadLanguage(this.value)">
