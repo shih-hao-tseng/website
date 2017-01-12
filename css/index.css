@@ -1,0 +1,41 @@
+header{
+   margin:0;
+   padding:0;
+   height:80px;
+   width:100%;
+   background-color:#CC0033;
+   text-align:center;
+   z-index:9000;
+   position: fixed;
+   top: 0px;
+}
+
+#page-selector{
+   margin:0;
+   padding:10px;
+   list-style-type:none;
+}
+
+/*
+ 選項
+*/
+#page-selector li{
+   height:60px;
+   width:160px;
+   display:table-cell;
+   vertical-align:middle;
+   cursor:pointer;
+
+   border-radius:10px;
+}
+#page-selector li:hover{
+   background-color:#b01c2e;
+}
+
+/*
+ 選項按鈕
+*/
+.Top-Bar-Buttons{
+   color:white;
+   font-size:26px;
+}
