@@ -27,13 +27,13 @@
 			<li onclick="loadContent('home')"><p class="index-home"></p></li>
 			<li onclick="loadContent('publications')"><p class="index-publications"></p></li>
 			<li onclick="loadContent('teaching')"><p class="index-teaching"></p></li>
+			<li id="language-selector"><p class="index-language"></p>
+			<select id="select-language" onchange="javascript:loadLanguage(this.value)">
+				<option value="en" selected>English</option>
+				<option value="zh">正體中文</option>
+			</select>
+			</li>
 		</ul>
-		<div id="language-selector"><p class="index-language"></p>
-		<select id="select-language" onchange="javascript:loadLanguage(this.value)">
-			<option value="en" selected>English</option>
-			<option value="zh">正體中文</option>
-		</select>
-		</div>
 	</center>
 </header>
 <div id="header-fix" style="display: block;"></div>
