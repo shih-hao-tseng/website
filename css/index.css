@@ -10,6 +10,9 @@ header{
    top: 0px;
 }
 
+/*
+ 導覽列項目框架
+*/
 #page-selector{
    margin:0;
    padding:10px;
@@ -35,7 +38,12 @@ header{
 /*
  選項按鈕
 */
-.Top-Bar-Buttons{
+#page-selector li p{
    color:white;
    font-size:26px;
+}
+
+#header-fix{
+   height:80px;
+   display:none;
 }
