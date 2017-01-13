@@ -4,3 +4,10 @@
    margin: auto;
    text-align: left;
 }
+#profile-left {
+   text-align: center;
+   width: 30%;
+}
+#profile-right {
+   width: 70%;
+}
