@@ -22,7 +22,7 @@ function convertPaperName (text) {
 }
 
 function loadPublications() {
-   $.get("data/courses/data", function(data) {
+   $.get("data/publications/data", function(data) {
       // 預備輸出的html
       var html_stack = "";
       $('conferences',data).each(function(){
