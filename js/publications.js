@@ -25,7 +25,7 @@ function loadPublications() {
    $.get("data/publications/data", function(data) {
       // 預備輸出的html
       var html_stack = "";
-      $('conferences',data).each(function(){
+      $("conferences",data).each(function(){
          $('p',$(this)).each(function(){
 		    html_stack += "<li style=\"padding-bottom:15px;\">";
 
