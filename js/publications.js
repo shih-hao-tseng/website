@@ -68,7 +68,7 @@ function loadPublications() {
 			   }
 			   nos = $(this).find('nos').text(); // 沒有 slides 原檔
 			   if ( nos == "" ){
-			      html_stack += "[<a class=\"publications-slides\" href=\"data/publications/slides/Tseng " + y + d + " - slides - " + t + ".pdf\"></a>]";
+			      html_stack += " [<a class=\"publications-slides\" href=\"data/publications/slides/Tseng " + y + d + " - slides - " + t + ".pdf\"></a>]";
 			   }
 			}
             html_stack += "</li>";
