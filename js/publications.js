@@ -64,11 +64,11 @@ function loadPublications() {
 			   t = convertPaperName(t);
 			   nop = $(this).find('nop').text(); // 沒有 paper 原檔
 			   if ( nop == "" ){
-			      html_stack += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + getSurname(as.eq(0).text()) + " " + y + " - " + t + " - author version.pdf\"></a>]";
+			      html_stack += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + getSurname(as.eq(0).text()) + " " + y + " - " + t + " - author version.pdf\">paper</a>]";
 			   }
 			   nos = $(this).find('nos').text(); // 沒有 slides 原檔
 			   if ( nos == "" ){
-			      html_stack += " [<a class=\"publications-slides\" href=\"data/publications/slides/Tseng " + y + d + " - slides - " + t + ".pdf\"></a>]";
+			      html_stack += " [<a class=\"publications-slides\" href=\"data/publications/slides/Tseng " + y + d + " - slides - " + t + ".pdf\">slides</a>]";
 			   }
 			}
             html_stack += "</li>";
