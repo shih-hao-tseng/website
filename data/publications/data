@@ -1,0 +1,49 @@
+<d>
+<conferences>
+
+<p>
+	<a>me</a><a>B. Bai</a><a>J. C. S. Lui</a>
+	<t>Hybrid Circuit/Packet Network Scheduling with Multiple Composite Paths</t>
+	<b>Proc. IEEE INFOCOM</b>
+	<y>2018</y>
+	<r>309/1606 = 19%</r>
+	<nop>y</nop>
+	<nos>y</nos>
+</p>
+
+<p>
+	<a>me</a><a>A. Tang</a>
+	<t>A Local Search Algorithm for the Witsenhausen's Counterexample</t>
+	<b>Proc. IEEE CDC</b>
+	<y>2017</y>
+	<d>1215</d>
+</p>
+
+<p>
+	<a>me</a><a>E. Bitar</a><a>A. Tang</a>
+	<t>Random Convex Approximations of Ambiguous Chance Constrained Programs</t>
+	<b>Proc. IEEE CDC</b>
+	<y>2016</y>
+	<d>1214</d>
+</p>
+
+<p>
+	<a>A. Gushchin</a><a>me</a><a>A. Tang</a>
+	<t>Optimization-Based Network Flow Deadline Scheduling</t>
+	<b>Proc. IEEE ICNP</b>
+	<y>2016</y>
+	<d>1111</d>
+	<r>46/229 = 20%</r>
+</p>
+
+<p>
+	<a>me</a><a>C. L. Lim</a><a>N. Wu</a><a>A. Tang</a>
+	<t>Time-Aware Congestion-Free Routing Reconfiguration</t>
+	<b>Proc. IFIP Networking</b>
+	<y>2016</y>
+	<d>0517</d>
+	<r>58/200 = 29%</r>
+</p>
+
+</conferences>
+</d>
