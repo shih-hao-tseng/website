@@ -31,15 +31,15 @@ function loadPublications() {
 
             as = $('a',(this)); // 作者
 			if ( as.length == 1 ) {
-			   html_stack += convertMyName(as:eq(0).text()) + ",";
+			   html_stack += convertMyName(as.eq(0).text()) + ",";
 			} else if ( as.length == 2 ) {
-			   html_stack += convertMyName(as:eq(0).text()) + " and " + convertMyName(as:eq(1).text()) + ",";
+			   html_stack += convertMyName(as.eq(0).text()) + " and " + convertMyName(as.eq(1).text()) + ",";
 			} else {
 			   i = 0;
 			   for(; i < as.length - 1; ++i) {
-			      html_stack += convertMyName(as:eq(i).text()) + ", ";
+			      html_stack += convertMyName(as.eq(i).text()) + ", ";
 			   }
-			   html_stack += "and " + convertMyName(as:eq(i).text()) + ",";
+			   html_stack += "and " + convertMyName(as.eq(i).text()) + ",";
 			}
 			html_stack += "<br>\n";
 			
@@ -64,7 +64,7 @@ function loadPublications() {
 			   t = convertPaperName(t);
 			   nop = $(this).find('nop').text(); // 沒有 paper 原檔
 			   if ( nop == "" ){
-			      html_stack += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + getSurname(as:eq(0).text()) + " " + y + " - " + t + " - author version.pdf\"></a>]";
+			      html_stack += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + getSurname(as.eq(0).text()) + " " + y + " - " + t + " - author version.pdf\"></a>]";
 			   }
 			   nos = $(this).find('nos').text(); // 沒有 slides 原檔
 			   if ( nos == "" ){
