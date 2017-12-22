@@ -1,0 +1,1 @@
+function addLoadEvent(func) {    func();}
