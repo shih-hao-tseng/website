@@ -79,6 +79,7 @@ function loadPublications() {
       $('#Conferences').html(html_stack);
 
       // submitted work
+      html_stack = "";
       $("submitted",data).each(function(){
          $('p',$(this)).each(function(){
          html_stack += "<li style=\"padding-bottom:15px;\">";
