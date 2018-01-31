@@ -104,7 +104,7 @@ function loadPublications() {
          html_stack_subm += "submitted for review.<br>\n";
 
          t = convertPaperName(t);
-         nop = $(this).find('nop').text(); // 沒有 paper 原檔
+         nop = $(this).find('nop').text(); // 沒有 manuscript 原檔
          if ( nop == "" ){
             html_stack_subm += "[<a class=\"publications-manuscript\" href=\"data/publications/manuscripts/" + getSurname(as.eq(0).text()) + " - " + t + " - submitted.pdf\">manuscript</a>]";
          }
