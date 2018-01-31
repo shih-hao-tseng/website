@@ -55,10 +55,10 @@ function loadPublications() {
 			}
 			html_stack += "in <i>" + b + "</i>, " + y + ".";
 
-			r = $(this).find('r').text(); // 接受率
-			if ( r != "" ) {
-			   html_stack += " (acceptance rate: " + r + ")";
-			}
+			//r = $(this).find('r').text(); // 接受率
+			//if ( r != "" ) {
+			//   html_stack += " (acceptance rate: " + r + ")";
+			//}
             html_stack += "<br>\n";
 
 			if ( d != "" ) {
