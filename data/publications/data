@@ -2,6 +2,16 @@
 <conferences>
 
 <p>
+	<a>me</a><a>A. Tang</a>
+	<t>Coflow Deadline Scheduling via Network-Aware Optimization</t>
+	<b>Proc. Allerton</b>
+	<y>2018</y>
+	<d>1002</d>
+	<nos>y</nos>
+	<nop>y</nop>
+</p>
+
+<p>
 	<a>me</a><a>B. Bai</a><a>J. C. S. Lui</a>
 	<t>Hybrid Circuit/Packet Network Scheduling with Multiple Composite Paths</t>
 	<b>Proc. IEEE INFOCOM</b>
@@ -52,12 +62,6 @@
 <p>
 	<a>me</a><a>A. Tang</a><a>G. Choudhury</a><a>S. Tse</a>
 	<t>Routing Stability in Hybrid Software-Defined Networks</t>
-</p>
-
-<p>
-	<a>me</a><a>A. Tang</a>
-	<t>Coflow Deadline Scheduling via Network-Aware Optimization</t>
-	<nop>y</nop>
 </p>
 
 </submitted>
