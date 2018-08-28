@@ -34,6 +34,12 @@ footer{
 .right{
    float:right;
 }
+.vertical-middle{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: stretch;
+}
 #name-display{
    margin:0;
    padding:10px;

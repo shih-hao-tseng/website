@@ -1,4 +1,10 @@
-#profile, #biography{
+#profile{
+   display: flex;
+   width: 80%;
+   margin: auto;
+   text-align: left;
+}
+#biography{
    display: inline-block;
    width: 80%;
    margin: auto;
