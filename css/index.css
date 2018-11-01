@@ -12,7 +12,7 @@ header{
    padding:0;
    height:60px;
    width:100%;
-   background-color:#CC0033;
+   background-color:#FF6C0C;  /* Cornell: CC0033; */
    text-align:center;
    z-index:9000;
    position: fixed;
@@ -24,7 +24,7 @@ footer{
    margin:-60px 0 0 0;  /* height + 2*padding */
    padding:20px 0;
    width:100%;
-   background-color:#CC0033;
+   background-color:#FF6C0C;
    text-align:center;
    bottom: 0px;
 }
@@ -75,7 +75,7 @@ footer{
    border-radius:10px;
 }
 #page-selector li:not(#language-selector):hover{
-   background-color:#b01c2e;
+   background-color:#e65a00;  /* Cornell: b01c2e; */
 }
 #page-selector li:not(#language-selector) div{
    font-size:22px;
