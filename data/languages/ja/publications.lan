@@ -1,1 +1,10 @@
-{	"publications-conference": "国際会議",	"publications-paper": "論文",	"publications-slides": "スライド",	"publications-submitted": "投稿済み",	"publications-manuscript": "原稿"}
+{
+	"publications-conference": "国際会議",
+	"publications-paper": "論文",
+	"publications-slides": "スライド",
+
+	"publications-journal": "論文誌",
+
+	"publications-submitted": "投稿済み",
+	"publications-manuscript": "原稿"
+}

@@ -1,1 +1,10 @@
-{	"publications-conference": "Konferenzbeiträge",	"publications-paper": "Dokument",	"publications-slides": "Präsentation",	"publications-submitted": "Eingereicht",	"publications-manuscript": "Manuskript"}
+{
+	"publications-conference": "Konferenzbeiträge",
+	"publications-paper": "Dokument",
+	"publications-slides": "Präsentation",
+
+	"publications-journal": "Journalbeiträge",
+
+	"publications-submitted": "Eingereicht",
+	"publications-manuscript": "Manuskript"
+}
