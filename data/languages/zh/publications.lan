@@ -1,1 +1,10 @@
-{	"publications-conference": "會議論文",	"publications-paper": "正文",	"publications-slides": "簡報",	"publications-submitted": "待審文稿",	"publications-manuscript": "文稿"}
+{
+	"publications-conference": "會議論文",
+	"publications-paper": "正文",
+	"publications-slides": "簡報",
+
+	"publications-journal": "期刊論文",
+
+	"publications-submitted": "待審文稿",
+	"publications-manuscript": "文稿"
+}

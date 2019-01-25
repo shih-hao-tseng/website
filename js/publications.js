@@ -157,6 +157,8 @@ function loadPublications() {
          $('#publications-end').before("<h2 class=\"publications-submitted\"></h2><ul id=\"Submitted\"></ul>");
          $('#Submitted').html(html_stack_subm);
       }
+
+      loadLanguage(userLang);
    });
 }
 

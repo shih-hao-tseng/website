@@ -1,1 +1,10 @@
-{	"publications-conference": "Conference Proceedings",	"publications-paper": "paper",	"publications-slides": "slides",	"publications-submitted": "Submitted Work",	"publications-manuscript": "manuscript"}
+{
+	"publications-conference": "Conference Proceedings",
+	"publications-paper": "paper",
+	"publications-slides": "slides",
+
+	"publications-journal": "Journal Transactions",
+
+	"publications-submitted": "Submitted Work",
+	"publications-manuscript": "manuscript"
+}
