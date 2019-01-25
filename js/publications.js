@@ -76,7 +76,49 @@ function loadPublications() {
          html_stack_conf += "</li>";
          });
       });
-      $('#Conferences').html(html_stack_conf);
+      if(html_stack_jour != "") {
+         $('#publications-end').before("<h2 class="publications-conference"></h2><ul id="Conferences"></ul>");
+         $('#Conferences').html(html_stack_conf);
+      }
+
+      // journal papers
+      html_stack_jour = "";
+      $("Journal",data).each(function(){
+         $('p',$(this)).each(function(){
+         html_stack_jour += "<li style=\"padding-bottom:15px;\">";
+
+         as = $('a',(this)); // 作者
+         if ( as.length == 1 ) {
+            html_stack_jour += convertMyName(as.eq(0).text()) + ",";
+         } else if ( as.length == 2 ) {
+            html_stack_jour += convertMyName(as.eq(0).text()) + " and " + convertMyName(as.eq(1).text()) + ",";
+         } else {
+            i = 0;
+            for(; i < as.length - 1; ++i) {
+               html_stack_jour += convertMyName(as.eq(i).text()) + ", ";
+            }
+            html_stack_jour += "and " + convertMyName(as.eq(i).text()) + ",";
+         }
+         html_stack_jour += "<br>\n";
+         
+         t = $(this).find('t').text(); // 標題
+         html_stack_jour += "``" + t + ",''<br>\n";
+
+         b = $(this).find('b').text(); // 期刊名
+         y = $(this).find('y').text(); // 年
+         html_stack_jour += "in <i>" + b + "</i>, " + y + ".<br>\n";
+         t = convertPaperName(t);
+         nop = $(this).find('nop').text(); // 沒有 paper 原檔
+         if ( nop == "" ){
+            html_stack_jour += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + getSurname(as.eq(0).text()) + " " + y + " - " + t + " - author version.pdf\">paper</a>]";
+         }
+         html_stack_jour += "</li>";
+         });
+      });
+      if(html_stack_jour != "") {
+         $('#publications-start').after("<h2 class="publications-journal"></h2><ul id="Journal"></ul>");
+         $('#Journal').html(html_stack_jour);
+      }
 
       // submitted work
       var html_stack_subm = "";
@@ -111,7 +153,10 @@ function loadPublications() {
          html_stack_subm += "</li>";
          });
       });
-      $('#Submitted').html(html_stack_subm);
+      if(html_stack_subm != "") {
+         $('#publications-end').before("<h2 class="publications-submitted"></h2><ul id="Submitted"></ul>");
+         $('#Submitted').html(html_stack_subm);
+      }
    });
 }
 
