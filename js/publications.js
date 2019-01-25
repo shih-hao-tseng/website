@@ -77,7 +77,7 @@ function loadPublications() {
          });
       });
       if(html_stack_conf != "") {
-         $('#publications-end').before("<h2 class="publications-conference"></h2><ul id="Conferences"></ul>");
+         $('#publications-end').before("<h2 class=\"publications-conference\"></h2><ul id=\"Conferences\"></ul>");
          $('#Conferences').html(html_stack_conf);
       }
 
@@ -116,7 +116,7 @@ function loadPublications() {
          });
       });
       if(html_stack_jour != "") {
-         $('#publications-end').before("<h2 class="publications-journal"></h2><ul id="Journal"></ul>");
+         $('#publications-end').before("<h2 class=\"publications-journal\"></h2><ul id=\"Journal\"></ul>");
          $('#Journal').html(html_stack_jour);
       }
 
@@ -154,7 +154,7 @@ function loadPublications() {
          });
       });
       if(html_stack_subm != "") {
-         $('#publications-end').before("<h2 class="publications-submitted"></h2><ul id="Submitted"></ul>");
+         $('#publications-end').before("<h2 class=\"publications-submitted\"></h2><ul id=\"Submitted\"></ul>");
          $('#Submitted').html(html_stack_subm);
       }
    });
