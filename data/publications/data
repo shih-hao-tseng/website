@@ -2,6 +2,16 @@
 <conferences>
 
 <p>
+	<a>J. Cheng</a><a>me</a><a>A. Tang</a>
+	<t>Worst-Case Latency Performance of Load Balancing Through Distributed Waterfilling Algorithm</t>
+	<b>Proc. CISS</b>
+	<y>2019</y>
+	<d>0322</d>
+	<nos>y</nos>
+	<nop>y</nop>
+</p>
+
+<p>
 	<a>N. Wu</a><a>me</a><a>A. Tang</a>
 	<t>Accurate Rate-Aware Flow-Level Traffic Splitting</t>
 	<b>Proc. Allerton</b>
