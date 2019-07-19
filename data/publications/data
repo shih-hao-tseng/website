@@ -2,6 +2,17 @@
 <conferences>
 
 <p>
+	<a>me</a>
+	<t>Perseverance-Aware Traffic Engineering in Rate Adaptive Network with Reconfiguration Delay</t>
+	<b>Proc. IEEE ICNP</b>
+	<y>2019</y>
+	<d></d>
+	<nos>y</nos>
+	<nop>y</nop>
+	<r>41/212 = 19%</r>
+</p>
+
+<p>
 	<a>J. Cheng</a><a>me</a><a>A. Tang</a>
 	<t>Worst-Case Latency Performance of Load Balancing Through Distributed Waterfilling Algorithm</t>
 	<b>Proc. CISS</b>
