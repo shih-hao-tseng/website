@@ -16,9 +16,13 @@ function getSurname (text) {
 }
 
 function convertPaperName (text) {
-   text = text.replace('/', '-');  // replace / by -
-   text = text.replace('\'', '');  // replace ' by nothing
-   text = text.replace(':', '_');  // replace : by _
+   text = text.replace(/\//g, '-');  // replace all / by -
+   text = text.replace(/\'/g, '');  // replace all ' by nothing
+   text = text.replace(/:/g, '_');  // replace all : by _
+
+   //text = text.replace('/', '-');  // replace / by -
+   //text = text.replace('\'', '');  // replace ' by nothing
+   //text = text.replace(':', '_');  // replace : by _
    return text;
 }
 
