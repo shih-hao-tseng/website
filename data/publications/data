@@ -2,6 +2,20 @@
 <conferences>
 
 <p>
+	<a>me</a><a>J. Anderson</a>
+	<t>Deployment Architectures for Cyber-Physical Control Systems</t>
+	<b>Proc. IEEE ACC</b>
+	<y>2020</y>
+</p>
+
+<p>
+	<a>me</a>
+	<t>A Generic Solver for Unconstrained Control Problems with Integral Functional Objectives</t>
+	<b>Proc. IEEE ACC</b>
+	<y>2020</y>
+</p>
+
+<p>
 	<a>me</a>
 	<t>Perseverance-Aware Traffic Engineering in Rate-Adaptive Networks with Reconfiguration Delay</t>
 	<b>Proc. IEEE ICNP</b>
