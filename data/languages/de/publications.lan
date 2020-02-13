@@ -6,5 +6,8 @@
 	"publications-journal": "Journalbeiträge",
 
 	"publications-submitted": "Eingereicht",
-	"publications-manuscript": "Manuskript"
+	"publications-manuscript": "Manuskript",
+
+	"publications-dissertation": "Doktorarbeit",
+	"publications-link": "Link"
 }

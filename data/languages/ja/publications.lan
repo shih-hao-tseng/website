@@ -6,5 +6,9 @@
 	"publications-journal": "論文誌",
 
 	"publications-submitted": "投稿済み",
-	"publications-manuscript": "原稿"
+	"publications-manuscript": "原稿",
+
+	"publications-dissertation": "博士論文",
+	"publications-link": "リンク"
+}
 }
