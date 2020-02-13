@@ -173,7 +173,7 @@ function loadPublications() {
          t = $(this).find('t').text(); // 標題
          html_stack_diss += "``" + t + ",''";
          y = $(this).find('y').text(); // 年
-         html_stack_diss += y + ".<br>\n";
+         html_stack_diss += " " + y + ".<br>\n";
 
          html_stack_diss += "[<a class=\"publications-link\" href=\"" + $(this).find('l').text() + "\">link</a>]";
          html_stack_diss += "</li>";
