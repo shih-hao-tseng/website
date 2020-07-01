@@ -6,5 +6,8 @@
 	"publications-journal": "Journal Transactions",
 
 	"publications-submitted": "Submitted Work",
-	"publications-manuscript": "manuscript"
+	"publications-manuscript": "manuscript",
+
+	"publications-dissertation": "Dissertation",
+	"publications-link": "link"
 }

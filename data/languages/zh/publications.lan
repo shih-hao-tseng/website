@@ -6,5 +6,8 @@
 	"publications-journal": "期刊論文",
 
 	"publications-submitted": "待審文稿",
-	"publications-manuscript": "文稿"
+	"publications-manuscript": "文稿",
+
+	"publications-dissertation": "博士論文",
+	"publications-link": "連結"
 }

@@ -162,6 +162,27 @@ function loadPublications() {
          $('#Submitted').html(html_stack_subm);
       }
 
+      // dissertation
+      var html_stack_diss = "";
+      $("dissertation",data).each(function(){
+         html_stack_diss += "<li style=\"padding-bottom:15px;\">";
+
+         as = $('a',(this)); // 作者
+         html_stack_diss += "<b>S.-H. Tseng</b>,<br>\n";
+         
+         t = $(this).find('t').text(); // 標題
+         html_stack_diss += "``" + t + ",''";
+         y = $(this).find('y').text(); // 年
+         html_stack_diss += " " + y + ".<br>\n";
+
+         html_stack_diss += "[<a class=\"publications-link\" href=\"" + $(this).find('l').text() + "\">link</a>]";
+         html_stack_diss += "</li>";
+      });
+      if(html_stack_diss != "") {
+         $('#publications-end').before("<h2 class=\"publications-dissertation\"></h2><ul id=\"Dissertation\"></ul>");
+         $('#Dissertation').html(html_stack_diss);
+      }
+
       loadLanguage(userLang);
    });
 }
