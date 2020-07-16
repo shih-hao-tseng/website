@@ -2,6 +2,13 @@
 <conferences>
 
 <p>
+	<a>me</a><a>C. Amo Alonso</a><a>S. Han</a>
+	<t>System Level Synthesis via Dynamic Programming</t>
+	<b>Proc. IEEE CDC</b>
+	<y>2020</y>
+</p>
+
+<p>
 	<a>me</a><a>J. Anderson</a>
 	<t>Deployment Architectures for Cyber-Physical Control Systems</t>
 	<b>Proc. IEEE ACC</b>
