@@ -131,11 +131,12 @@ function loadPublications() {
          html_stack_subm += "submitted for review.<br>\n";
 
          t = convertPaperName(t);
-         nop = $(this).find('nop').text(); // 沒有 manuscript 原檔
+         nop = $(this).find('nop').text(); // 沒有 manuscript 原檔 (<nop>y</nop>)
          if ( nop == "" ){
+            // 有 manuscript 原檔
             html_stack_subm += "[<a class=\"publications-manuscript\" href=\"data/publications/manuscripts/" + getSurname(authors.eq(0).text()) + " - " + t + " - submitted.pdf\">manuscript</a>]";
          }
-         arxiv = $(this).find('arxiv').text(); // arXiv preprint
+         arxiv = $(this).find('arxiv').text(); // 有 arXiv preprint
          if ( arxiv != "" ){
             html_stack_subm += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + arxiv + \">arXiv</a>]";
          }
