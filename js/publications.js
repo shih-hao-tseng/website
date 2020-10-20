@@ -44,6 +44,7 @@ function parseAuthors (authors) {
 }
 
 function loadPublications() {
+   /*
    $.get("data/publications/data", function(data) {
       // 預備輸出的html
       var html_stack_conf = "";
@@ -173,6 +174,7 @@ function loadPublications() {
 
       loadLanguage(userLang);
    });
+   */
 }
 
 addLoadEvent(loadPublications());
