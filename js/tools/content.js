@@ -5,8 +5,6 @@ function loadContent(page) {
 
 	$.get("pages/" + page + ".html", function(data) {
 		$('#page-content').html(data);
-		// 讓內文頂部與底部稍有距離
-		//$('.Content-Fix').css('height','10px');
 
 		loadLanguage(userLang);
 	});
