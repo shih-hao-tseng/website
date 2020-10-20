@@ -46,8 +46,40 @@ function parseAuthors (authors) {
 function loadPublications() {
    $.get("data/publications/data", function(data) {
       // 預備輸出的html
-      var html_stack_conf = "";
+      // submitted work
+      var html_stack_subm = "";
+      $("submitted",data).each(function(){
+         $('p',$(this)).each(function(){
+         html_stack_subm += "<li style=\"padding-bottom:15px;\">";
+
+         authors = $('a',(this));
+         html_stack_subm += parseAuthors(authors) + "\n"; // 作者
+         
+         t = $(this).find('t').text(); // 標題
+         html_stack_subm += "``" + t + ",''<br>\n";
+
+         html_stack_subm += "submitted for review.<br>\n";
+
+         t = convertPaperName(t);
+         nop = $(this).find('nop').text(); // 沒有 manuscript 原檔 (<nop>y</nop>)
+         if ( nop == "" ){
+            // 有 manuscript 原檔
+            html_stack_subm += "[<a class=\"publications-manuscript\" href=\"data/publications/manuscripts/" + getSurname(authors.eq(0).text()) + " - " + t + " - submitted.pdf\">manuscript</a>]";
+         }
+         arxiv = $(this).find('arxiv').text(); // 有 arXiv preprint
+         if ( arxiv != "" ){
+            html_stack_subm += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + arxiv + "\">arXiv</a>]";
+         }
+         html_stack_subm += "</li>";
+         });
+      });
+      if(html_stack_subm != "") {
+         $('#publications-end').before("<h2 class=\"publications-submitted\"></h2><ul id=\"Submitted\"></ul>");
+         $('#Submitted').html(html_stack_subm);
+      }
+
       // conference papers
+      var html_stack_conf = "";
       $("conferences",data).each(function(){
          $('p',$(this)).each(function(){
          html_stack_conf += "<li style=\"padding-bottom:15px;\">";
@@ -117,38 +149,6 @@ function loadPublications() {
       if(html_stack_jour != "") {
          $('#publications-end').before("<h2 class=\"publications-journal\"></h2><ul id=\"Journal\"></ul>");
          $('#Journal').html(html_stack_jour);
-      }
-
-      // submitted work
-      var html_stack_subm = "";
-      $("submitted",data).each(function(){
-         $('p',$(this)).each(function(){
-         html_stack_subm += "<li style=\"padding-bottom:15px;\">";
-
-         authors = $('a',(this));
-         html_stack_subm += parseAuthors(authors) + "\n"; // 作者
-         
-         t = $(this).find('t').text(); // 標題
-         html_stack_subm += "``" + t + ",''<br>\n";
-
-         html_stack_subm += "submitted for review.<br>\n";
-
-         t = convertPaperName(t);
-         nop = $(this).find('nop').text(); // 沒有 manuscript 原檔 (<nop>y</nop>)
-         if ( nop == "" ){
-            // 有 manuscript 原檔
-            html_stack_subm += "[<a class=\"publications-manuscript\" href=\"data/publications/manuscripts/" + getSurname(authors.eq(0).text()) + " - " + t + " - submitted.pdf\">manuscript</a>]";
-         }
-         arxiv = $(this).find('arxiv').text(); // 有 arXiv preprint
-         if ( arxiv != "" ){
-            html_stack_subm += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + arxiv + "\">arXiv</a>]";
-         }
-         html_stack_subm += "</li>";
-         });
-      });
-      if(html_stack_subm != "") {
-         $('#publications-end').before("<h2 class=\"publications-submitted\"></h2><ul id=\"Submitted\"></ul>");
-         $('#Submitted').html(html_stack_subm);
       }
 
       // dissertation
