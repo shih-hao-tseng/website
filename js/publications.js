@@ -90,7 +90,7 @@ function loadPublications() {
          $('#publications-end').before("<h2 class=\"publications-conference\"></h2><ul id=\"Conferences\"></ul>");
          $('#Conferences').html(html_stack_conf);
       }
-
+/*
       // journal papers
       html_stack_jour = "";
       $("Journal",data).each(function(){
@@ -173,6 +173,7 @@ function loadPublications() {
 
       loadLanguage(userLang);
    });
+*/
 }
 
 addLoadEvent(loadPublications());
