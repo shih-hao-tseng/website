@@ -27,7 +27,7 @@ function convertPaperName (text) {
 }
 
 function parseAuthors (authors) {
-   html_stack = "";
+   var html_stack = "";
    if ( authors.length == 1 ) {
       html_stack += convertMyName(authors.eq(0).text()) + ",";
    } else if ( authors.length == 2 ) {
@@ -44,7 +44,6 @@ function parseAuthors (authors) {
 }
 
 function loadPublications() {
-   /*
    $.get("data/publications/data", function(data) {
       // 預備輸出的html
       var html_stack_conf = "";
@@ -93,7 +92,7 @@ function loadPublications() {
       }
 
       // journal papers
-      html_stack_jour = "";
+      var html_stack_jour = "";
       $("Journal",data).each(function(){
          $('p',$(this)).each(function(){
          html_stack_jour += "<li style=\"padding-bottom:15px;\">";
@@ -174,7 +173,6 @@ function loadPublications() {
 
       loadLanguage(userLang);
    });
-   */
 }
 
 addLoadEvent(loadPublications());
