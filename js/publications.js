@@ -53,7 +53,7 @@ function loadPublications() {
          html_stack_conf += "<li style=\"padding-bottom:15px;\">";
 
          authors = $('a',(this));
-         html_stack_conf += parseAuthors(authors); // 作者
+         //html_stack_conf += parseAuthors(authors); // 作者
          
          t = $(this).find('t').text(); // 標題
          html_stack_conf += "``" + t + ",''<br>\n";
