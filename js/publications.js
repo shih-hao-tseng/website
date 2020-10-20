@@ -56,9 +56,9 @@ function loadPublications() {
          html_stack_subm += parseAuthors(authors) + "\n"; // 作者
          
          t = $(this).find('t').text(); // 標題
-         html_stack_subm += "``" + t + ",''<br>\n";
+         html_stack_subm += "``" + t + ".''<br>\n";
 
-         html_stack_subm += "submitted for review.<br>\n";
+         //html_stack_subm += "submitted for review.<br>\n";
 
          t = convertPaperName(t);
          nop = $(this).find('nop').text(); // 沒有 manuscript 原檔 (<nop>y</nop>)
