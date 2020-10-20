@@ -90,7 +90,7 @@ function loadPublications() {
          $('#publications-end').before("<h2 class=\"publications-conference\"></h2><ul id=\"Conferences\"></ul>");
          $('#Conferences').html(html_stack_conf);
       }
-/*
+
       // journal papers
       var html_stack_jour = "";
       $("Journal",data).each(function(){
@@ -170,7 +170,7 @@ function loadPublications() {
          $('#publications-end').before("<h2 class=\"publications-dissertation\"></h2><ul id=\"Dissertation\"></ul>");
          $('#Dissertation').html(html_stack_diss);
       }
-*/
+
       loadLanguage(userLang);
    });
 }
