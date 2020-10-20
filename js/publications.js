@@ -43,6 +43,10 @@ function parseAuthors (authors) {
    return html_stack;
 }
 
+function parseTitle (title) {
+   return "“" + title + ".”<br>";
+}
+
 function loadPublications() {
    $.get("data/publications/data", function(data) {
       // 預備輸出的html
@@ -56,7 +60,7 @@ function loadPublications() {
          html_stack_subm += parseAuthors(authors) + "\n"; // 作者
          
          t = $(this).find('t').text(); // 標題
-         html_stack_subm += "``" + t + ".''<br>\n";
+         html_stack_subm += parseTitle(t) + "\n";
 
          //html_stack_subm += "submitted for review.<br>\n";
 
@@ -88,7 +92,7 @@ function loadPublications() {
          html_stack_conf += parseAuthors(authors) + "\n"; // 作者
          
          t = $(this).find('t').text(); // 標題
-         html_stack_conf += "``" + t + ",''<br>\n";
+         html_stack_conf += parseTitle(t) + "\n";
 
          b = $(this).find('b').text(); // 期刊名
          y = $(this).find('y').text(); // 年
@@ -133,7 +137,7 @@ function loadPublications() {
          html_stack_jour += parseAuthors(authors) + "\n"; // 作者
          
          t = $(this).find('t').text(); // 標題
-         html_stack_jour += "``" + t + ",''<br>\n";
+         html_stack_jour += parseTitle(t) + "\n";
 
          b = $(this).find('b').text(); // 期刊名
          y = $(this).find('y').text(); // 年
@@ -159,7 +163,7 @@ function loadPublications() {
          html_stack_diss += "<b>S.-H. Tseng</b>,<br>\n";
          
          t = $(this).find('t').text(); // 標題
-         html_stack_diss += "``" + t + ",''";
+         html_stack_diss += "“" + t + ",”";
          y = $(this).find('y').text(); // 年
          html_stack_diss += " " + y + ".<br>\n";
 
