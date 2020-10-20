@@ -118,7 +118,7 @@ function loadPublications() {
          $('#publications-end').before("<h2 class=\"publications-journal\"></h2><ul id=\"Journal\"></ul>");
          $('#Journal').html(html_stack_jour);
       }
-/*
+
       // submitted work
       var html_stack_subm = "";
       $("submitted",data).each(function(){
@@ -141,7 +141,7 @@ function loadPublications() {
          }
          arxiv = $(this).find('arxiv').text(); // 有 arXiv preprint
          if ( arxiv != "" ){
-            html_stack_subm += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + arxiv + \">arXiv</a>]";
+            html_stack_subm += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + arxiv + "\">arXiv</a>]";
          }
          html_stack_subm += "</li>";
          });
@@ -150,7 +150,7 @@ function loadPublications() {
          $('#publications-end').before("<h2 class=\"publications-submitted\"></h2><ul id=\"Submitted\"></ul>");
          $('#Submitted').html(html_stack_subm);
       }
-*/
+
       // dissertation
       var html_stack_diss = "";
       $("dissertation",data).each(function(){
