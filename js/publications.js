@@ -53,7 +53,22 @@ function loadPublications() {
          html_stack_conf += "<li style=\"padding-bottom:15px;\">";
 
          authors = $('a',(this));
-         html_stack_conf += parseAuthors(authors); // 作者
+         var html_stack = "";
+         if ( authors.length == 1 ) {
+            html_stack += convertMyName(authors.eq(0).text()) + ",";
+         } else if ( authors.length == 2 ) {
+            html_stack += convertMyName(authors.eq(0).text()) + " and " + convertMyName(authors.eq(1).text()) + ",";
+         } else {
+            i = 0;
+            for(; i < authors.length - 1; ++i) {
+               html_stack += convertMyName(authors.eq(i).text()) + ", ";
+            }
+            html_stack += "and " + convertMyName(authors.eq(i).text()) + ",";
+         }
+         html_stack += "<br>\n";
+
+         html_stack_conf += html_stack;
+         //html_stack_conf += parseAuthors(authors); // 作者
          
          t = $(this).find('t').text(); // 標題
          html_stack_conf += "``" + t + ",''<br>\n";
