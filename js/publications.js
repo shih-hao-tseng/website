@@ -52,7 +52,8 @@ function loadPublications() {
          $('p',$(this)).each(function(){
          html_stack_conf += "<li style=\"padding-bottom:15px;\">";
 
-         html_stack_conf += parseAuthors( $('a',(this)) ); // 作者
+         authors = $('a',(this));
+         html_stack_conf += parseAuthors(authors); // 作者
          
          t = $(this).find('t').text(); // 標題
          html_stack_conf += "``" + t + ",''<br>\n";
@@ -96,7 +97,8 @@ function loadPublications() {
          $('p',$(this)).each(function(){
          html_stack_jour += "<li style=\"padding-bottom:15px;\">";
 
-         html_stack_jour += parseAuthors( $('a',(this)) ); // 作者
+         authors = $('a',(this));
+         html_stack_jour += parseAuthors(authors); // 作者
          
          t = $(this).find('t').text(); // 標題
          html_stack_jour += "``" + t + ",''<br>\n";
@@ -123,7 +125,8 @@ function loadPublications() {
          $('p',$(this)).each(function(){
          html_stack_subm += "<li style=\"padding-bottom:15px;\">";
 
-         html_stack_subm += parseAuthors( $('a',(this)) ); // 作者
+         authors = $('a',(this));
+         html_stack_subm += parseAuthors(authors); // 作者
          
          t = $(this).find('t').text(); // 標題
          html_stack_subm += "``" + t + ",''<br>\n";
