@@ -40,7 +40,7 @@ function parseAuthors (authors) {
       html_stack += "and " + convertMyName(authors.eq(i).text()) + ",";
    }
    html_stack += "<br>\n";
-   return html_stack;
+   return "html_stack";
 }
 
 function loadPublications() {
