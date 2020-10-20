@@ -26,6 +26,23 @@ function convertPaperName (text) {
    return text;
 }
 
+function parseAuthors (authors) {
+   html_stack = "";
+   if ( authors.length == 1 ) {
+      html_stack += convertMyName(authors.eq(0).text()) + ",";
+   } else if ( authors.length == 2 ) {
+      html_stack += convertMyName(authors.eq(0).text()) + " and " + convertMyName(authors.eq(1).text()) + ",";
+   } else {
+      i = 0;
+      for(; i < authors.length - 1; ++i) {
+         html_stack += convertMyName(authors.eq(i).text()) + ", ";
+      }
+      html_stack += "and " + convertMyName(authors.eq(i).text()) + ",";
+   }
+   html_stack += "<br>\n";
+   return html_stack;
+}
+
 function loadPublications() {
    $.get("data/publications/data", function(data) {
       // 預備輸出的html
@@ -35,19 +52,7 @@ function loadPublications() {
          $('p',$(this)).each(function(){
          html_stack_conf += "<li style=\"padding-bottom:15px;\">";
 
-         as = $('a',(this)); // 作者
-         if ( as.length == 1 ) {
-            html_stack_conf += convertMyName(as.eq(0).text()) + ",";
-         } else if ( as.length == 2 ) {
-            html_stack_conf += convertMyName(as.eq(0).text()) + " and " + convertMyName(as.eq(1).text()) + ",";
-         } else {
-            i = 0;
-            for(; i < as.length - 1; ++i) {
-               html_stack_conf += convertMyName(as.eq(i).text()) + ", ";
-            }
-            html_stack_conf += "and " + convertMyName(as.eq(i).text()) + ",";
-         }
-         html_stack_conf += "<br>\n";
+         html_stack_conf += parseAuthors( $('a',(this)) ); // 作者
          
          t = $(this).find('t').text(); // 標題
          html_stack_conf += "``" + t + ",''<br>\n";
@@ -70,7 +75,7 @@ function loadPublications() {
             t = convertPaperName(t);
             nop = $(this).find('nop').text(); // 沒有 paper 原檔
             if ( nop == "" ){
-               html_stack_conf += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + getSurname(as.eq(0).text()) + " " + y + " - " + t + " - author version.pdf\">paper</a>]";
+               html_stack_conf += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + getSurname(authors.eq(0).text()) + " " + y + " - " + t + " - author version.pdf\">paper</a>]";
             }
             nos = $(this).find('nos').text(); // 沒有 slides 原檔
             if ( nos == "" ){
@@ -91,19 +96,7 @@ function loadPublications() {
          $('p',$(this)).each(function(){
          html_stack_jour += "<li style=\"padding-bottom:15px;\">";
 
-         as = $('a',(this)); // 作者
-         if ( as.length == 1 ) {
-            html_stack_jour += convertMyName(as.eq(0).text()) + ",";
-         } else if ( as.length == 2 ) {
-            html_stack_jour += convertMyName(as.eq(0).text()) + " and " + convertMyName(as.eq(1).text()) + ",";
-         } else {
-            i = 0;
-            for(; i < as.length - 1; ++i) {
-               html_stack_jour += convertMyName(as.eq(i).text()) + ", ";
-            }
-            html_stack_jour += "and " + convertMyName(as.eq(i).text()) + ",";
-         }
-         html_stack_jour += "<br>\n";
+         html_stack_jour += parseAuthors( $('a',(this)) ); // 作者
          
          t = $(this).find('t').text(); // 標題
          html_stack_jour += "``" + t + ",''<br>\n";
@@ -114,7 +107,7 @@ function loadPublications() {
          t = convertPaperName(t);
          nop = $(this).find('nop').text(); // 沒有 paper 原檔
          if ( nop == "" ){
-            html_stack_jour += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + getSurname(as.eq(0).text()) + " " + y + " - " + t + " - author version.pdf\">paper</a>]";
+            html_stack_jour += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + getSurname(authors.eq(0).text()) + " " + y + " - " + t + " - author version.pdf\">paper</a>]";
          }
          html_stack_jour += "</li>";
          });
@@ -130,19 +123,7 @@ function loadPublications() {
          $('p',$(this)).each(function(){
          html_stack_subm += "<li style=\"padding-bottom:15px;\">";
 
-         as = $('a',(this)); // 作者
-         if ( as.length == 1 ) {
-            html_stack_subm += convertMyName(as.eq(0).text()) + ",";
-         } else if ( as.length == 2 ) {
-            html_stack_subm += convertMyName(as.eq(0).text()) + " and " + convertMyName(as.eq(1).text()) + ",";
-         } else {
-            i = 0;
-            for(; i < as.length - 1; ++i) {
-               html_stack_subm += convertMyName(as.eq(i).text()) + ", ";
-            }
-            html_stack_subm += "and " + convertMyName(as.eq(i).text()) + ",";
-         }
-         html_stack_subm += "<br>\n";
+         html_stack_subm += parseAuthors( $('a',(this)) ); // 作者
          
          t = $(this).find('t').text(); // 標題
          html_stack_subm += "``" + t + ",''<br>\n";
@@ -152,7 +133,11 @@ function loadPublications() {
          t = convertPaperName(t);
          nop = $(this).find('nop').text(); // 沒有 manuscript 原檔
          if ( nop == "" ){
-            html_stack_subm += "[<a class=\"publications-manuscript\" href=\"data/publications/manuscripts/" + getSurname(as.eq(0).text()) + " - " + t + " - submitted.pdf\">manuscript</a>]";
+            html_stack_subm += "[<a class=\"publications-manuscript\" href=\"data/publications/manuscripts/" + getSurname(authors.eq(0).text()) + " - " + t + " - submitted.pdf\">manuscript</a>]";
+         }
+         arxiv = $(this).find('arxiv').text(); // arXiv preprint
+         if ( arxiv != "" ){
+            html_stack_subm += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + arxiv + \">arXiv</a>]";
          }
          html_stack_subm += "</li>";
          });
@@ -167,7 +152,6 @@ function loadPublications() {
       $("dissertation",data).each(function(){
          html_stack_diss += "<li style=\"padding-bottom:15px;\">";
 
-         as = $('a',(this)); // 作者
          html_stack_diss += "<b>S.-H. Tseng</b>,<br>\n";
          
          t = $(this).find('t').text(); // 標題
