@@ -118,7 +118,7 @@ function loadPublications() {
          $('#publications-end').before("<h2 class=\"publications-journal\"></h2><ul id=\"Journal\"></ul>");
          $('#Journal').html(html_stack_jour);
       }
-
+/*
       // submitted work
       var html_stack_subm = "";
       $("submitted",data).each(function(){
@@ -150,7 +150,7 @@ function loadPublications() {
          $('#publications-end').before("<h2 class=\"publications-submitted\"></h2><ul id=\"Submitted\"></ul>");
          $('#Submitted').html(html_stack_subm);
       }
-
+*/
       // dissertation
       var html_stack_diss = "";
       $("dissertation",data).each(function(){
