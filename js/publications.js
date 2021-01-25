@@ -118,10 +118,10 @@ function loadPublications() {
             if ( nos == "" ){
                html_stack_conf += " [<a class=\"publications-slides\" href=\"data/publications/slides/Tseng " + y + d + " - slides - " + t + ".pdf\">slides</a>]";
             }
-            arxiv = $(this).find('arxiv').text(); // 有 arXiv preprint
-            if ( arxiv != "" ){
-               html_stack_conf += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + arxiv + "\">arXiv</a>]";
-            }
+         }
+         arxiv = $(this).find('arxiv').text(); // 有 arXiv preprint
+         if ( arxiv != "" ){
+            html_stack_conf += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + arxiv + "\">arXiv</a>]";
          }
          html_stack_conf += "</li>";
          });
