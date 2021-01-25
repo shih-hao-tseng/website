@@ -118,6 +118,10 @@ function loadPublications() {
             if ( nos == "" ){
                html_stack_conf += " [<a class=\"publications-slides\" href=\"data/publications/slides/Tseng " + y + d + " - slides - " + t + ".pdf\">slides</a>]";
             }
+            arxiv = $(this).find('arxiv').text(); // 有 arXiv preprint
+            if ( arxiv != "" ){
+               html_stack_conf += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + arxiv + "\">arXiv</a>]";
+            }
          }
          html_stack_conf += "</li>";
          });
@@ -146,6 +150,10 @@ function loadPublications() {
          nop = $(this).find('nop').text(); // 沒有 paper 原檔
          if ( nop == "" ){
             html_stack_jour += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + getSurname(authors.eq(0).text()) + " " + y + " - " + t + " - author version.pdf\">paper</a>]";
+         }
+         arxiv = $(this).find('arxiv').text(); // 有 arXiv preprint
+         if ( arxiv != "" ){
+            html_stack_jour += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + arxiv + "\">arXiv</a>]";
          }
          html_stack_jour += "</li>";
          });
