@@ -1,18 +1,22 @@
+
 // 按下選單的時候切換內文
 function loadContent(page) {
 	loadPages[prevPage] = false;
 	loadPages[page] = true;
 
-	$.get("pages/" + page + ".html", function(data) {
-		$('#page-content').html(data);
+	var xhr = new XMLHttpRequest();
+	xhr.responseType = 'text';
+	xhr.open("get","pages/" + page + ".html",true);
+	xhr.onload = function (e) {
+		$('#page-content').html(xhr.responseText);
 		// 讓內文頂部與底部稍有距離
 		//$('.Content-Fix').css('height','10px');
 
 		loadLanguage(userLang);
-	});
 
-	prevPage = page;
-	// 相當於return true, 回到頂部
+		prevPage = page;
+	};
+	xhr.send();
 }
 
 // 增加初次載入頁面要做的工作
