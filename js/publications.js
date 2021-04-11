@@ -169,7 +169,7 @@ function renderPublicationBy(items,item_names){
 	return rendered_html_stack;
 }
 
-var renderOption = "type";
+var renderOption = "topic";
 function renderPublicationData(){
 	switch(renderOption) {
 		case "type":
