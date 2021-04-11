@@ -56,8 +56,7 @@ function parseData (data) {
 	publicationTopics = {};
 
 	papers = JSON.parse(data);
-	console.debug(papers);
-
+	
 	papers.forEach(function (paper, paper_id) {
 		paper_string = "";
 		if (paper.type == "d") {
