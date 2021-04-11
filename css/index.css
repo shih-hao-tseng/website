@@ -92,6 +92,7 @@ footer{
    min-height: 100%;
 }
 #header-fix{
+   min-height:60px;
    visibility:hidden;
 }
 #page-content{
