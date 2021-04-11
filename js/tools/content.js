@@ -1,5 +1,3 @@
-var cachedContents = {};
-
 function applyContent(page,content) {
 	$('#page-content').html(content);
 	// 讓內文頂部與底部稍有距離
@@ -16,10 +14,8 @@ function loadContent(page) {
 	loadPages[page] = true;
 
 	if (page in cachedContents) {
-		console.debug('cached'+page);
 		applyContent(page,cachedContents[page]);
 	} else {
-		console.debug('no cached'+page);
 		var xhr = new XMLHttpRequest();
 		xhr.responseType = 'text';
 		xhr.open("get","pages/" + page + ".html",true);

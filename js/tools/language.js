@@ -17,9 +17,6 @@ var languageLoadRetry = 0;
 jsonFile.onload = languageLoadSuccess;
 jsonFile.onerror = languageLoadFail;
 
-// local cache
-var cachedLanguages = {};
-
 function applyLanguage(content) {
 	for (var className in content) {
 		$('.'+className).html(content[className]);
