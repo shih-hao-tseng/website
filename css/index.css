@@ -10,7 +10,7 @@ header{
    color:white;
    margin:0;
    padding:0;
-   height:60px;
+   min-height:60px;
    width:100%;
    background-color:#FF6C0C;  /* Cornell: CC0033; */
    text-align:center;
@@ -92,8 +92,7 @@ footer{
    min-height: 100%;
 }
 #header-fix{
-   height:60px;
-   display:none;
+   visibility:hidden;
 }
 #page-content{
    margin:20px 5%;
