@@ -9,5 +9,8 @@
 	"publications-manuscript": "原稿",
 
 	"publications-dissertation": "博士論文",
-	"publications-link": "リンク"
+	"publications-link": "リンク",
+	
+	"publications-control": "制御理論",
+	"publications-network": "コンピュータネットワーク"
 }

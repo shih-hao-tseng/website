@@ -9,5 +9,8 @@
 	"publications-manuscript": "Manuskript",
 
 	"publications-dissertation": "Doktorarbeit",
-	"publications-link": "Link"
+	"publications-link": "Link",
+	
+	"publications-control": "Kontrolltheorie",
+	"publications-network": "Computernetzwerk"
 }

@@ -1,4 +1,15 @@
 <script src="js/publications.js", type="text/javascript"></script>
-<!--<center><h2 class="index-publications"></h2></center>-->
+<link rel="stylesheet" href="css/pages/publications.css"/>
+<center>
+<h2 id="publication-sort-options">
+<div class="publication-sort">Sorted by</div>
+<ul>
+    <li onclick="renderOption='type';renderPublicationData();"><div class="publication-type">type</div></li>
+    <li onclick="renderOption='topic';renderPublicationData();"><div class="publication-topic">topic</div></li>
+</ul>
+<div class="publication-sort-end"></div>
+</h2>
+<!--<h2 class="index-publications"></h2>-->
+</center>
 
 <div id="publications"></div>

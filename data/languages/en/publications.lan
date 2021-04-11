@@ -1,4 +1,9 @@
 {
+	"publication-sort": "Sorted by",
+	"publication-type": "type",
+	"publication-topic": "topic",
+	"publication-sort-end": "",
+
 	"publications-conference": "Conference Proceedings",
 	"publications-paper": "paper",
 	"publications-slides": "slides",
@@ -10,5 +15,8 @@
 	"publications-arxiv": "arXiv",
 
 	"publications-dissertation": "Dissertation",
-	"publications-link": "link"
+	"publications-link": "link",
+	
+	"publications-control": "Control Theory",
+	"publications-network": "Computer Networking"
 }

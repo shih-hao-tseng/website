@@ -1,4 +1,9 @@
 {
+	"publication-sort": "依照",
+	"publication-type": "種類",
+	"publication-topic": "主題",
+	"publication-sort-end": "排序",
+
 	"publications-conference": "會議論文",
 	"publications-paper": "正文",
 	"publications-slides": "簡報",
@@ -9,5 +14,8 @@
 	"publications-manuscript": "文稿",
 
 	"publications-dissertation": "博士論文",
-	"publications-link": "連結"
+	"publications-link": "連結",
+	
+	"publications-control": "控制理論",
+	"publications-network": "電腦網路"
 }

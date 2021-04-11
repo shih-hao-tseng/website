@@ -3,30 +3,35 @@
 	"t":"Effective GPU Parallelization of Distributed and Localized Model Predictive Control",
 	"tags":["nop"],
 	"arxiv":"2103.14990",
-	"type":"s"
+	"type":"s",
+	"topic":"control"
 },{
 	"a":["me"],
 	"t":"A General Approach to Robust Controller Analysis and Synthesis",
 	"tags":["nop"],
 	"arxiv":"2103.13650",
-	"type":"s"
+	"type":"s",
+	"topic":"control"
 },{
 	"a":["me","J. Anderson"],
 	"t":"Synthesis to Deployment: Cyber-Physical Control Architectures",
 	"tags":["nop"],
 	"arxiv":"2012.05211",
-	"type":"s"
+	"type":"s",
+	"topic":"control"
 },{
 	"a":["me","J. S. Li"],
 	"t":"SLSpy: Python-Based System-Level Controller Synthesis Framework",
 	"tags":["nop"],
 	"arxiv":"2004.12565",
-	"type":"s"
+	"type":"s",
+	"topic":"control"
 },{
 	"a":["me","S. Han","A. Wierman"],
 	"t":"In-Network Freshness Control: Trading Throughput for Freshness",
 	"tags":["nop"],
-	"type":"s"
+	"type":"s",
+	"topic":"network"
 },{
 	"a":["me"],
 	"t":"Realization, Internal Stability, and Controller Synthesis",
@@ -50,21 +55,24 @@
 	"b":"Proc. IEEE CDC",
 	"y":2020,
 	"d":"1215",
-	"type":"c"
+	"type":"c",
+	"topic":"control"
 },{
 	"a":["me","J. Anderson"],
 	"t":"Deployment Architectures for Cyber-Physical Control Systems",
 	"b":"Proc. IEEE ACC",
 	"y":2020,
 	"d":"0703",
-	"type":"c"
+	"type":"c",
+	"topic":"control"
 },{
 	"a":["me"],
 	"t":"A Generic Solver for Unconstrained Control Problems with Integral Functional Objectives",
 	"b":"Proc. IEEE ACC",
 	"y":2020,
 	"d":"0701",
-	"type":"c"
+	"type":"c",
+	"topic":"control"
 },{
 	"a":["me"],
 	"t":"Perseverance-Aware Traffic Engineering in Rate-Adaptive Networks with Reconfiguration Delay",
@@ -72,7 +80,8 @@
 	"y":2019,
 	"d":"1010",
 	"r":"38/210 = 18%",
-	"type":"c"
+	"type":"c",
+	"topic":"network"
 },{
 	"a":["J. Cheng","me","A. Tang"],
 	"t":"Worst-Case Latency Performance of Load Balancing Through Distributed Waterfilling Algorithm",
@@ -80,7 +89,8 @@
 	"y":2019,
 	"d":"0322",
 	"tags":["nos","nop"],
-	"type":"c"
+	"type":"c",
+	"topic":"network"
 },{
 	"a":["N. Wu","me","A. Tang"],
 	"t":"Accurate Rate-Aware Flow-Level Traffic Splitting",
@@ -88,14 +98,16 @@
 	"y":2018,
 	"d":"1004",
 	"tags":["nos","nop"],
-	"type":"c"
+	"type":"c",
+	"topic":"network"
 },{
 	"a":["me","A. Tang"],
 	"t":"Coflow Deadline Scheduling via Network-Aware Optimization",
 	"b":"Proc. Allerton",
 	"y":2018,
 	"d":"1004",
-	"type":"c"
+	"type":"c",
+	"topic":"network"
 },{
 	"a":["me","B. Bai","J. C. S. Lui"],
 	"t":"Hybrid Circuit/Packet Network Scheduling with Multiple Composite Paths",
@@ -103,21 +115,24 @@
 	"y":2018,
 	"d":"0418",
 	"r":"309/1606 = 19%",
-	"type":"c"
+	"type":"c",
+	"topic":"network"
 },{
 	"a":["me","A. Tang"],
 	"t":"A Local Search Algorithm for the Witsenhausen's Counterexample",
 	"b":"Proc. IEEE CDC",
 	"y":2017,
 	"d":"1215",
-	"type":"c"
+	"type":"c",
+	"topic":"control"
 },{
 	"a":["me","E. Bitar","A. Tang"],
 	"t":"Random Convex Approximations of Ambiguous Chance Constrained Programs",
 	"b":"Proc. IEEE CDC",
 	"y":2016,
 	"d":"1214",
-	"type":"c"
+	"type":"c",
+	"topic":"control"
 },{
 	"a":["A. Gushchin","me","A. Tang"],
 	"t":"Optimization-Based Network Flow Deadline Scheduling",
@@ -125,7 +140,8 @@
 	"y":2016,
 	"d":"1111",
 	"r":"46/229 = 20%",
-	"type":"c"
+	"type":"c",
+	"topic":"network"
 },{
 	"a":["me","C. L. Lim","N. Wu","A. Tang"],
 	"t":"Time-Aware Congestion-Free Routing Reconfiguration",
@@ -133,16 +149,19 @@
 	"y":2016,
 	"d":"0517",
 	"r":"58/200 = 29%",
-	"type":"c"
+	"type":"c",
+	"topic":"network"
 },{
 	"a":["me","A. Tang","G. Choudhury","S. Tse"],
 	"t":"Routing Stability in Hybrid Software-Defined Networks",
 	"b":"IEEE Trans. Netw.",
 	"y":2019,
-	"type":"j"
+	"type":"j",
+	"topic":"network"
 },{
 	"t":"Orchestrating Inter-Datacenter Bulk Transfers with CodedBulk",
 	"y":2018,
 	"l":"https://ecommons.cornell.edu/handle/1813/64901",
-	"type":"d"
+	"type":"d",
+	"topic":"network"
 } ]

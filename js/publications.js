@@ -143,7 +143,10 @@ const publicationTypeNames = {
 	"j": "journal",
 	"d": "dissertation"
 }
-
+const publicationTopicNames = {
+	"control": "control",
+	"network": "network"
+}
 function renderPublicationBy(items,item_names){
 	rendered_html_stack = "";
 	for (item in item_names) {
@@ -166,8 +169,21 @@ function renderPublicationBy(items,item_names){
 	return rendered_html_stack;
 }
 
+var renderOption = "type";
 function renderPublicationData(){
-	rendered_html_stack = renderPublicationBy(publicationTypes,publicationTypeNames);
+	switch(renderOption) {
+		case "type":
+			rendered_html_stack = renderPublicationBy(publicationTypes,publicationTypeNames);
+			$('.publication-type').css('color','#FF6C0C');
+			$('.publication-topic').css('color','black');
+			break;
+		case "topic":
+			rendered_html_stack = renderPublicationBy(publicationTopics,publicationTopicNames);
+			$('.publication-type').css('color','black');
+			$('.publication-topic').css('color','#FF6C0C');
+			break;
+	}
+
 	$('#publications').html(rendered_html_stack);
 	loadLanguage(userLang);
 }
