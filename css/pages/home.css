@@ -1,11 +1,5 @@
 #profile{
    display: flex;
-   width: 80%;
-   margin: auto;
-   text-align: left;
-}
-#biography{
-   display: inline-block;
    width: 60%;
    margin: auto;
    text-align: left;
@@ -13,11 +7,51 @@
 #profile-left {
    text-align: center;
    width: 40%;
+   min-width: 350px;
 }
 #profile-right {
    width: 60%;
+   min-width: 525px;
+}
+#biography{
+   display: inline-block;
+   width: 60%;
+   min-width: 600px;
+   margin: auto;
+   text-align: left;
 }
 #research-interests {
    width: 60%;
+   min-width: 600px;
    text-align: left;
+}
+/* For tablets: max-width: 992px */
+/* For mobiles: max-width: 600px */
+@media only screen and (max-width: 825px) {
+   #profile{
+      display: block;
+      width: 100%;
+      text-align: center;
+   }
+   #profile-left {
+      width: 100%;
+      min-width: 0px;
+   }
+   #profile-right {
+      text-align: left;
+      width: 100%;
+      min-width: 0px;
+   }
+}
+@media only screen and (max-width: 600px) {
+   #biography{
+      width: 100%;
+      min-width: 0px;
+      text-align: left;
+   }
+   #research-interests {
+      width: 100%;
+      min-width: 0px;
+      text-align: left;
+   }
 }
