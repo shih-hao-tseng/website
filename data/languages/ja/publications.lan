@@ -1,4 +1,9 @@
 {
+	"publication-sort": "並べ替え",
+	"publication-type": "種類",
+	"publication-topic": "主題",
+	"publication-sort-end": "",
+
 	"publications-conference": "国際会議",
 	"publications-paper": "論文",
 	"publications-slides": "スライド",
