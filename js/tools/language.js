@@ -17,25 +17,30 @@ var languageLoadRetry = 0;
 jsonFile.onload = languageLoadSuccess;
 jsonFile.onerror = languageLoadFail;
 
-function loadLanguageQueue() {
-	// the caller must ensure languageLoadQueue is non empty
-	jsonFile.open("get", "data/languages/"+languageLoadQueue[0]+".lan",true);
-	jsonFile.send();
+// local cache
+var cachedLanguages = {};
+
+function applyLanguage(content) {
+	for (var className in content) {
+		$('.'+className).html(content[className]);
+		//document.getElementById(className).innerHTML = jsonFileContent[className];
+	}
 }
 
-function languageLoadSuccess() {
-	if (jsonFile.status == 200) {
-		jsonFileContent = JSON.parse(jsonFile.responseText);
-		for (var className in jsonFileContent) {
-			$('.'+className).html(jsonFileContent[className]);
-			//document.getElementById(className).innerHTML = jsonFileContent[className];
-		}
-	}
+function loadLanguageQueue() {
+	// check cache:
+	if (languageLoadQueue[0] in cachedLanguages) {
+		applyLanguage(cachedLanguages[languageLoadQueue[0]]);
 
-	languageLoadQueue.shift();
-	if (languageLoadQueue.length > 0) {
-		languageLoadRetry = 0;
-		loadLanguageQueue();
+		languageLoadQueue.shift();
+		if (languageLoadQueue.length > 0) {
+			languageLoadRetry = 0;
+			loadLanguageQueue();
+		}
+	} else {
+		// the caller must ensure languageLoadQueue is non empty
+		jsonFile.open("get", "data/languages/"+languageLoadQueue[0]+".lan",true);
+		jsonFile.send();
 	}
 }
 
@@ -44,6 +49,22 @@ function languageLoadFail() {
 	if (languageLoadRetry < 5) {
 		++languageLoadRetry;
 		loadLanguageQueue();
+	}
+}
+
+function languageLoadSuccess() {
+	if (jsonFile.status == 200) {
+		jsonFileContent = JSON.parse(jsonFile.responseText);
+		applyLanguage(jsonFileContent);
+		current_language = languageLoadQueue.shift();
+		cachedLanguages[current_language] = jsonFileContent;
+
+		if (languageLoadQueue.length > 0) {
+			languageLoadRetry = 0;
+			loadLanguageQueue();
+		}
+	} else {
+		languageLoadFail();
 	}
 }
 
