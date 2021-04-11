@@ -168,7 +168,7 @@ function renderPublicationBy(items,item_names){
 
 function renderPublicationData(){
 	rendered_html_stack = renderPublicationBy(publicationTypes,publicationTypeNames);
-	$('#publications-end').before(rendered_html_stack);
+	$('#publications').html(rendered_html_stack);
 	loadLanguage(userLang);
 }
 
