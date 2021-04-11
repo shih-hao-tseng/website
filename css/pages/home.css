@@ -6,7 +6,7 @@
 }
 #biography{
    display: inline-block;
-   width: 80%;
+   width: 60%;
    margin: auto;
    text-align: left;
 }
@@ -16,4 +16,8 @@
 }
 #profile-right {
    width: 60%;
+}
+#research-interests {
+   width: 60%;
+   text-align: left;
 }
