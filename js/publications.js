@@ -60,19 +60,25 @@ function parseData (data) {
 
 	papers.forEach(function (paper, paper_id) {
 		paper_string = "";
-		paper_string += parseAuthors(paper.a) + "\n";
+		if (paper.type == "d") {
+			paper_string += "<b>S.-H. Tseng</b>,\n";
+		} else {
+			paper_string += parseAuthors(paper.a) + "\n";
+			surname = getSurname(paper.a[0])
+		}
 		paper_string += parseTitle(paper.t, paper.type === "s") + "\n";
 		
 		// auxiliary variables
 		t = convertPaperName(paper.t);
-		y = paper.y.toString();
-		has_p = false;
-		has_s = false;
-		if ("tags" in paper) {
-			has_p = !("nop" in paper.tags);
-			has_s = !("nos" in paper.tags);
+		if (paper.type != "s") {
+			y = paper.y.toString();
 		}
-		surname = getSurname(paper.a[0])
+		has_p = true;
+		has_s = true;
+		if ("tags" in paper) {
+			has_p = !paper.tags.includes("nop");
+			has_s = !paper.tags.includes("nos");
+		}
 
 		switch (paper.type) {
 			case "s": // submitted
@@ -100,13 +106,13 @@ function parseData (data) {
 				}
 				break;
 			case "j": // journal
-				paper_string += "in <i>" + paper.b + "</i>, " + y + ".";
+				paper_string += "in <i>" + paper.b + "</i>, " + y + ".<br>\n";
 				if (has_p){
 					paper_string += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + surname + " " + y + " - " + t + " - author version.pdf\">paper</a>] ";
 				}
 				break;
 			case "d": // dissertation
-				paper_string += " " + y + ".<br>";
+				paper_string += " " + y + ".<br>\n";
 				paper_string += "[<a class=\"publications-link\" href=\"" + paper.l + "\">link</a>] ";
 				break;
 		}
@@ -141,7 +147,11 @@ const publicationTypeNames = {
 
 function renderPublicationBy(items,item_names){
 	rendered_html_stack = "";
-	for (item in items) {
+	for (item in item_names) {
+		if (!(item in items)) {
+			// enforcing the order
+			continue;
+		}
 		item_name = item_names[item];
 		capitalized_item_name = item_name.charAt(0).toUpperCase() + item_name.slice(1);
 		rendered_html_stack += "<h2 class=\"publications-"+item_name+"\"></h2>";
