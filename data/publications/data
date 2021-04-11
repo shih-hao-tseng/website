@@ -1,182 +1,22 @@
-<d>
-<conferences>
+[{
+	"a":["me"],
+	"t":"Realization, Internal Stability, and Controller Synthesis",
+	"b":"Proc. IEEE ACC",
+	"arxiv":"2009.14328",
+	"y":2021,
+	"type":"c",
+	"topic":"control"
+},{
+	"a":["me","S. Agarwal","R. Agarwal","H. Ballani","A. Tang"],
+	"t":"CodedBulk: Inter-Datacenter Bulk Transfers Using Network Coding",
+	"b":"Proc. USENIX NSDI",
+	"y":2021,
+	"d":"0412",
+	"tags":["nos"],
+	"type":"c",
+	"topic":"network"
+},{
 
-<p>
-	<a>me</a>
-	<t>Realization, Internal Stability, and Controller Synthesis</t>
-	<b>Proc. IEEE ACC</b>
-	<arxiv>2009.14328</arxiv>
-	<y>2021</y>
-</p>
 
-<p>
-	<a>me</a><a>S. Agarwal</a><a>R. Agarwal</a><a>H. Ballani</a><a>A. Tang</a>
-	<t>CodedBulk: Inter-Datacenter Bulk Transfers Using Network Coding</t>
-	<b>Proc. USENIX NSDI</b>
-	<y>2021</y>
-	<d>0412</d>
-	<nos>y</nos>
-</p>
 
-<p>
-	<a>me</a><a>C. Amo Alonso</a><a>S. Han</a>
-	<t>System Level Synthesis via Dynamic Programming</t>
-	<b>Proc. IEEE CDC</b>
-	<y>2020</y>
-	<d>1215</d>
-</p>
-
-<p>
-	<a>me</a><a>J. Anderson</a>
-	<t>Deployment Architectures for Cyber-Physical Control Systems</t>
-	<b>Proc. IEEE ACC</b>
-	<y>2020</y>
-	<d>0703</d>
-</p>
-
-<p>
-	<a>me</a>
-	<t>A Generic Solver for Unconstrained Control Problems with Integral Functional Objectives</t>
-	<b>Proc. IEEE ACC</b>
-	<y>2020</y>
-	<d>0701</d>
-</p>
-
-<p>
-	<a>me</a>
-	<t>Perseverance-Aware Traffic Engineering in Rate-Adaptive Networks with Reconfiguration Delay</t>
-	<b>Proc. IEEE ICNP</b>
-	<y>2019</y>
-	<d>1010</d>
-	<r>38/210 = 18%</r>
-</p>
-
-<p>
-	<a>J. Cheng</a><a>me</a><a>A. Tang</a>
-	<t>Worst-Case Latency Performance of Load Balancing Through Distributed Waterfilling Algorithm</t>
-	<b>Proc. CISS</b>
-	<y>2019</y>
-	<d>0322</d>
-	<nos>y</nos>
-	<nop>y</nop>
-</p>
-
-<p>
-	<a>N. Wu</a><a>me</a><a>A. Tang</a>
-	<t>Accurate Rate-Aware Flow-Level Traffic Splitting</t>
-	<b>Proc. Allerton</b>
-	<y>2018</y>
-	<d>1004</d>
-	<nos>y</nos>
-	<nop>y</nop>
-</p>
-
-<p>
-	<a>me</a><a>A. Tang</a>
-	<t>Coflow Deadline Scheduling via Network-Aware Optimization</t>
-	<b>Proc. Allerton</b>
-	<y>2018</y>
-	<d>1004</d>
-</p>
-
-<p>
-	<a>me</a><a>B. Bai</a><a>J. C. S. Lui</a>
-	<t>Hybrid Circuit/Packet Network Scheduling with Multiple Composite Paths</t>
-	<b>Proc. IEEE INFOCOM</b>
-	<y>2018</y>
-	<d>0418</d>
-	<r>309/1606 = 19%</r>
-</p>
-
-<p>
-	<a>me</a><a>A. Tang</a>
-	<t>A Local Search Algorithm for the Witsenhausen's Counterexample</t>
-	<b>Proc. IEEE CDC</b>
-	<y>2017</y>
-	<d>1215</d>
-</p>
-
-<p>
-	<a>me</a><a>E. Bitar</a><a>A. Tang</a>
-	<t>Random Convex Approximations of Ambiguous Chance Constrained Programs</t>
-	<b>Proc. IEEE CDC</b>
-	<y>2016</y>
-	<d>1214</d>
-</p>
-
-<p>
-	<a>A. Gushchin</a><a>me</a><a>A. Tang</a>
-	<t>Optimization-Based Network Flow Deadline Scheduling</t>
-	<b>Proc. IEEE ICNP</b>
-	<y>2016</y>
-	<d>1111</d>
-	<r>46/229 = 20%</r>
-</p>
-
-<p>
-	<a>me</a><a>C. L. Lim</a><a>N. Wu</a><a>A. Tang</a>
-	<t>Time-Aware Congestion-Free Routing Reconfiguration</t>
-	<b>Proc. IFIP Networking</b>
-	<y>2016</y>
-	<d>0517</d>
-	<r>58/200 = 29%</r>
-</p>
-
-</conferences>
-
-<journal>
-
-<p>
-	<a>me</a><a>A. Tang</a><a>G. Choudhury</a><a>S. Tse</a>
-	<t>Routing Stability in Hybrid Software-Defined Networks</t>
-	<b>IEEE Trans. Netw.</b>
-	<y>2019</y>
-</p>
-
-</journal>
-
-<submitted>
-
-<p>
-	<a>C. Amo Alonso</a><a>me</a>
-	<t>Effective GPU Parallelization of Distributed and Localized Model Predictive Control</t>
-	<nop>y</nop>
-	<arxiv>2103.14990</arxiv>
-</p>
-
-<p>
-	<a>me</a>
-	<t>A General Approach to Robust Controller Analysis and Synthesis</t>
-	<nop>y</nop>
-	<arxiv>2103.13650</arxiv>
-</p>
-
-<p>
-	<a>me</a><a>J. Anderson</a>
-	<t>Synthesis to Deployment: Cyber-Physical Control Architectures</t>
-	<nop>y</nop>
-	<arxiv>2012.05211</arxiv>
-</p>
-
-<p>
-	<a>me</a><a>J. S. Li</a>
-	<t>SLSpy: Python-Based System-Level Controller Synthesis Framework</t>
-	<nop>y</nop>
-	<arxiv>2004.12565</arxiv>
-</p>
-
-<p>
-	<a>me</a><a>S. Han</a><a>A. Wierman</a>
-	<t>In-Network Freshness Control: Trading Throughput for Freshness</t>
-	<nop>y</nop>
-</p>
-
-</submitted>
-
-<dissertation>
-	<t>Orchestrating Inter-Datacenter Bulk Transfers with CodedBulk</t>
-	<y>2018</y>
-	<l>https://ecommons.cornell.edu/handle/1813/64901</l>
-</dissertation>
-
-</d>
+}]

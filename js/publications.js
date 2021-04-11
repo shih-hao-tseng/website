@@ -29,175 +29,152 @@ function convertPaperName (text) {
 function parseAuthors (authors) {
 	var html_stack = "";
 	if ( authors.length == 1 ) {
-		html_stack += convertMyName(authors.eq(0).text()) + ",";
+		html_stack += convertMyName(authors[0]) + ",";
 	} else if ( authors.length == 2 ) {
-		html_stack += convertMyName(authors.eq(0).text()) + " and " + convertMyName(authors.eq(1).text()) + ",";
+		html_stack += convertMyName(authors[0]) + " and " + convertMyName(authors[1]) + ",";
 	} else {
 		i = 0;
 		for(; i < authors.length - 1; ++i) {
-			html_stack += convertMyName(authors.eq(i).text()) + ", ";
+			html_stack += convertMyName(authors[i]) + ", ";
 		}
-		html_stack += "and " + convertMyName(authors.eq(i).text()) + ",";
+		html_stack += "and " + convertMyName(authors[i]) + ",";
 	}
 	html_stack += "<br>";
 	return html_stack;
 }
 
-function parseTitle (title) {
-	return "“" + title + ".”<br>";
+function parseTitle (title,last = false) {
+	if (last) {
+		return "“" + title + ".”<br>";
+	}
+	return "“" + title + ",”<br>";
 }
 
-function applyPublicationData(){
-	data = cachedPublicationData;
-	// 預備輸出的html
-	// submitted work
-	var html_stack_subm = "";
-	$("submitted",data).each(function(){
-		$('p',$(this)).each(function(){
-		html_stack_subm += "<li style=\"padding-bottom:15px;\">";
+function parseData (data) {
+	cachedPublicationPapers = [];
+	publicationTypes = {};
+	publicationTopics = {};
 
-		authors = $('a',(this));
-		html_stack_subm += parseAuthors(authors) + "\n"; // 作者
+	papers = JSON.parse(data);
+	console.debug(papers);
+
+	papers.forEach(function (paper, paper_id) {
+		paper_string = "";
+		paper_string += parseAuthors(paper.a) + "\n";
+		paper_string += parseTitle(paper.t, paper.type === "s") + "\n";
 		
-		t = $(this).find('t').text(); // 標題
-		html_stack_subm += parseTitle(t) + "\n";
-
-		//html_stack_subm += "submitted for review.<br>\n";
-
-		t = convertPaperName(t);
-		nop = $(this).find('nop').text(); // 沒有 manuscript 原檔 (<nop>y</nop>)
-		if ( nop == "" ){
-			// 有 manuscript 原檔
-			html_stack_subm += "[<a class=\"publications-manuscript\" href=\"data/publications/manuscripts/" + getSurname(authors.eq(0).text()) + " - " + t + " - submitted.pdf\">manuscript</a>]";
+		// auxiliary variables
+		t = convertPaperName(paper.t);
+		y = paper.y.toString();
+		has_p = false;
+		has_s = false;
+		if ("tags" in paper) {
+			has_p = !("nop" in paper.tags);
+			has_s = !("nos" in paper.tags);
 		}
-		arxiv = $(this).find('arxiv').text(); // 有 arXiv preprint
-		if ( arxiv != "" ){
-			html_stack_subm += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + arxiv + "\">arXiv</a>]";
+		surname = getSurname(paper.a[0])
+
+		switch (paper.type) {
+			case "s": // submitted
+				if (has_p) {
+					paper_string += "[<a class=\"publications-manuscript\" href=\"data/publications/manuscripts/" + surname + " - " + t + " - submitted.pdf\">manuscript</a>] ";
+				}
+				break;
+			case "c": // conferences
+				if ( !("d" in paper) ) {
+					paper_string += "to appear ";
+				}
+				paper_string += "in <i>" + paper.b + "</i>, " + y + ".";
+
+				//if ( "r" in paper ) { // 接受率
+				//	paper_string += " (acceptance rate: " + paper.r + ")";
+				//}
+				paper_string += "<br>\n";
+				if ( "d" in paper ) {
+					if (has_p) {
+						paper_string += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + surname + " " + y + " - " + t + " - author version.pdf\">paper</a>] ";
+					}
+					if (has_s) {
+						paper_string += "[<a class=\"publications-slides\" href=\"data/publications/slides/Tseng " + y + paper.d + " - slides - " + t + ".pdf\">slides</a>] ";
+					}
+				}
+				break;
+			case "j": // journal
+				paper_string += "in <i>" + paper.b + "</i>, " + y + ".";
+				if (has_p){
+					paper_string += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + surname + " " + y + " - " + t + " - author version.pdf\">paper</a>] ";
+				}
+				break;
+			case "d": // dissertation
+				paper_string += " " + y + ".<br>";
+				paper_string += "[<a class=\"publications-link\" href=\"" + paper.l + "\">link</a>] ";
+				break;
 		}
-		html_stack_subm += "</li>";
-		});
-	});
-	if(html_stack_subm != "") {
-		$('#publications-end').before("<h2 class=\"publications-submitted\"></h2><ul id=\"Submitted\"></ul>");
-		$('#Submitted').html(html_stack_subm);
-	}
-
-	// conference papers
-	var html_stack_conf = "";
-	$("conferences",data).each(function(){
-		$('p',$(this)).each(function(){
-		html_stack_conf += "<li style=\"padding-bottom:15px;\">";
-
-		authors = $('a',(this));
-		html_stack_conf += parseAuthors(authors) + "\n"; // 作者
-		
-		t = $(this).find('t').text(); // 標題
-		html_stack_conf += parseTitle(t) + "\n";
-
-		b = $(this).find('b').text(); // 期刊名
-		y = $(this).find('y').text(); // 年
-		d = $(this).find('d').text(); // 日期
-		if ( d == "" ) {
-			html_stack_conf += "to appear ";
+		if ( "arxiv" in paper ){
+			paper_string += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + paper.arxiv + "\">arXiv</a>]";
 		}
-		html_stack_conf += "in <i>" + b + "</i>, " + y + ".";
+		cachedPublicationPapers.push(paper_string);
 
-		//r = $(this).find('r').text(); // 接受率
-		//if ( r != "" ) {
-		//	html_stack_conf += " (acceptance rate: " + r + ")";
-		//}
-		html_stack_conf += "<br>\n";
+		// categorize the paper
+		if (paper.type in publicationTypes) {
+			publicationTypes[paper.type].push(paper_id);
+		} else {
+			publicationTypes[paper.type] = [paper_id]
+		}
 
-		if ( d != "" ) {
-			t = convertPaperName(t);
-			nop = $(this).find('nop').text(); // 沒有 paper 原檔
-			if ( nop == "" ){
-				html_stack_conf += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + getSurname(authors.eq(0).text()) + " " + y + " - " + t + " - author version.pdf\">paper</a>]";
+		if ("topic" in paper) {
+			if (paper.topic in publicationTopics) {
+				publicationTopics[paper.topic].push(paper_id);
+			} else {
+				publicationTopics[paper.topic] = [paper_id];
 			}
-			nos = $(this).find('nos').text(); // 沒有 slides 原檔
-			if ( nos == "" ){
-				html_stack_conf += " [<a class=\"publications-slides\" href=\"data/publications/slides/Tseng " + y + d + " - slides - " + t + ".pdf\">slides</a>]";
-			}
 		}
-		arxiv = $(this).find('arxiv').text(); // 有 arXiv preprint
-		if ( arxiv != "" ){
-			html_stack_conf += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + arxiv + "\">arXiv</a>]";
-		}
-		html_stack_conf += "</li>";
-		});
 	});
-	if(html_stack_conf != "") {
-		$('#publications-end').before("<h2 class=\"publications-conference\"></h2><ul id=\"Conferences\"></ul>");
-		$('#Conferences').html(html_stack_conf);
-	}
+}
 
-	// journal papers
-	var html_stack_jour = "";
-	$("Journal",data).each(function(){
-		$('p',$(this)).each(function(){
-		html_stack_jour += "<li style=\"padding-bottom:15px;\">";
+const publicationTypeNames = {
+	"s": "submitted",
+	"c": "conference",
+	"j": "journal",
+	"d": "dissertation"
+}
 
-		authors = $('a',(this));
-		html_stack_jour += parseAuthors(authors) + "\n"; // 作者
+function renderPublicationBy(items,item_names){
+	rendered_html_stack = "";
+	for (item in items) {
+		item_name = item_names[item];
+		capitalized_item_name = item_name.charAt(0).toUpperCase() + item_name.slice(1);
+		rendered_html_stack += "<h2 class=\"publications-"+item_name+"\"></h2>";
+		rendered_html_stack += "<ul id=\""+capitalized_item_name+"\">";
 		
-		t = $(this).find('t').text(); // 標題
-		html_stack_jour += parseTitle(t) + "\n";
-
-		b = $(this).find('b').text(); // 期刊名
-		y = $(this).find('y').text(); // 年
-		html_stack_jour += "in <i>" + b + "</i>, " + y + ".<br>\n";
-		t = convertPaperName(t);
-		nop = $(this).find('nop').text(); // 沒有 paper 原檔
-		if ( nop == "" ){
-			html_stack_jour += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + getSurname(authors.eq(0).text()) + " " + y + " - " + t + " - author version.pdf\">paper</a>]";
-		}
-		arxiv = $(this).find('arxiv').text(); // 有 arXiv preprint
-		if ( arxiv != "" ){
-			html_stack_jour += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + arxiv + "\">arXiv</a>]";
-		}
-		html_stack_jour += "</li>";
+		items[item].forEach(function (paper_id, index) {
+			rendered_html_stack += "<li style=\"padding-bottom:15px;\">";
+			rendered_html_stack += cachedPublicationPapers[paper_id];
+			rendered_html_stack += "</li>";
 		});
-	});
-	if(html_stack_jour != "") {
-		$('#publications-end').before("<h2 class=\"publications-journal\"></h2><ul id=\"Journal\"></ul>");
-		$('#Journal').html(html_stack_jour);
+		rendered_html_stack += "</ul>";
 	}
+	return rendered_html_stack;
+}
 
-	// dissertation
-	var html_stack_diss = "";
-	$("dissertation",data).each(function(){
-		html_stack_diss += "<li style=\"padding-bottom:15px;\">";
-
-		html_stack_diss += "<b>S.-H. Tseng</b>,<br>\n";
-		
-		t = $(this).find('t').text(); // 標題
-		html_stack_diss += "“" + t + ",”";
-		y = $(this).find('y').text(); // 年
-		html_stack_diss += " " + y + ".<br>\n";
-
-		html_stack_diss += "[<a class=\"publications-link\" href=\"" + $(this).find('l').text() + "\">link</a>]";
-		html_stack_diss += "</li>";
-	});
-	if(html_stack_diss != "") {
-		$('#publications-end').before("<h2 class=\"publications-dissertation\"></h2><ul id=\"Dissertation\"></ul>");
-		$('#Dissertation').html(html_stack_diss);
-	}
-
+function renderPublicationData(){
+	rendered_html_stack = renderPublicationBy(publicationTypes,publicationTypeNames);
+	$('#publications-end').before(rendered_html_stack);
 	loadLanguage(userLang);
 }
 
 function loadPublications() {
-	if (cachedPublicationData.length === 0) {
+	if (cachedPublicationPapers.length === 0) {
 		var xhr = new XMLHttpRequest();
 		xhr.responseType = 'text';
 		xhr.open("get","data/publications/data",true);
 		xhr.onload = function (e) {
-			cachedPublicationData = xhr.responseText;
-			applyPublicationData();
+			parseData(xhr.responseText);
+			renderPublicationData();
 		};
 		xhr.send();
 	} else {
-		applyPublicationData();
+		renderPublicationData();
 	}
 }
 

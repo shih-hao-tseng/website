@@ -5,4 +5,6 @@ var loadPages = {};  // to support older version
 // caches
 var cachedLanguages = {};
 var cachedContents = {};
-var cachedPublicationData = '';
+var cachedPublicationPapers = [];
+var publicationTypes = {};
+var publicationTopics = {};
