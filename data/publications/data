@@ -3,34 +3,34 @@
 	"t":"Effective GPU Parallelization of Distributed and Localized Model Predictive Control",
 	"tags":["nop"],
 	"arxiv":"2103.14990",
-	"type":"s",
+	"type":"sc",
 	"topic":"control"
 },{
 	"a":["me"],
 	"t":"A General Approach to Robust Controller Analysis and Synthesis",
 	"tags":["nop"],
 	"arxiv":"2103.13650",
-	"type":"s",
+	"type":"sc",
 	"topic":"control"
 },{
 	"a":["me","J. Anderson"],
 	"t":"Synthesis to Deployment: Cyber-Physical Control Architectures",
 	"tags":["nop"],
 	"arxiv":"2012.05211",
-	"type":"s",
+	"type":"sj",
 	"topic":"control"
 },{
 	"a":["me","J. S. Li"],
 	"t":"SLSpy: Python-Based System-Level Controller Synthesis Framework",
 	"tags":["nop"],
 	"arxiv":"2004.12565",
-	"type":"s",
+	"type":"sc",
 	"topic":"control"
 },{
 	"a":["me","S. Han","A. Wierman"],
 	"t":"In-Network Freshness Control: Trading Throughput for Freshness",
 	"tags":["nop"],
-	"type":"s",
+	"type":"sj",
 	"topic":"network"
 },{
 	"a":["me"],

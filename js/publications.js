@@ -50,27 +50,51 @@ function parseTitle (title,last = false) {
 	return "“" + title + ",”<br>";
 }
 
+const publicationTypeNames = {
+	"s": "submitted",
+	"c": "conference",
+	"j": "journal",
+	"d": "dissertation"
+}
+const publicationTopicNames = {
+	"network": "network",
+	"control": "control"
+}
 function parseData (data) {
 	cachedPublicationPapers = [];
+	cachedPublicationPaperMarks = [];
 	publicationTypes = {};
 	publicationTopics = {};
 
 	papers = JSON.parse(data);
-	
+
+	type_counters = {}
+	// initialize the counter
+	for(type in publicationTypeNames) {
+		type_counters[type] = 0;
+	}
+
 	papers.forEach(function (paper, paper_id) {
 		paper_string = "";
-		if (paper.type == "d") {
+		paper_type = paper.type.charAt(0);
+		if (paper_type == "d") {
 			paper_string += "<b>S.-H. Tseng</b>,\n";
 		} else {
 			paper_string += parseAuthors(paper.a) + "\n";
 			surname = getSurname(paper.a[0])
 		}
-		paper_string += parseTitle(paper.t, paper.type === "s") + "\n";
+		paper_string += parseTitle(paper.t, paper_type === "s") + "\n";
 		
 		// auxiliary variables
 		t = convertPaperName(paper.t);
-		if (paper.type != "s") {
+		if (paper_type != "s") {
 			y = paper.y.toString();
+			++type_counters[paper_type];
+			cachedPublicationPaperMarks.push(paper_type+type_counters[paper_type].toString());
+		} else {
+			paper_sub_type = paper.type.charAt(1);
+			++type_counters[paper_sub_type];
+			cachedPublicationPaperMarks.push(paper_sub_type+type_counters[paper_sub_type].toString());
 		}
 		has_p = true;
 		has_s = true;
@@ -79,11 +103,12 @@ function parseData (data) {
 			has_s = !paper.tags.includes("nos");
 		}
 
-		switch (paper.type) {
+		switch (paper_type) {
 			case "s": // submitted
 				if (has_p) {
 					paper_string += "[<a class=\"publications-manuscript\" href=\"data/publications/manuscripts/" + surname + " - " + t + " - submitted.pdf\">manuscript</a>] ";
 				}
+
 				break;
 			case "c": // conferences
 				if ( !("d" in paper) ) {
@@ -137,17 +162,7 @@ function parseData (data) {
 	});
 }
 
-const publicationTypeNames = {
-	"s": "submitted",
-	"c": "conference",
-	"j": "journal",
-	"d": "dissertation"
-}
-const publicationTopicNames = {
-	"network": "network",
-	"control": "control"
-}
-function renderPublicationBy(items,item_names){
+function renderPublicationHTML(items,item_names){
 	rendered_html_stack = "";
 	for (item in item_names) {
 		if (!(item in items)) {
@@ -166,7 +181,25 @@ function renderPublicationBy(items,item_names){
 		});
 		rendered_html_stack += "</ul>";
 	}
-	return rendered_html_stack;
+	$('#publications').html(rendered_html_stack);
+}
+
+function renderPublicationCSS(items,item_names){
+	// set the marks
+	for (item in item_names) {
+		if (!(item in items)) {
+			// enforcing the order
+			continue;
+		}
+		item_name = item_names[item];
+		capitalized_item_name = item_name.charAt(0).toUpperCase() + item_name.slice(1);
+		$('#'+capitalized_item_name+' li').each(function (li_index) {
+			paper_id = items[item][li_index];
+
+			// cannot be set like this
+			$(this).marker(cachedPublicationPaperMarks[paper_id]);
+		});
+	}
 }
 
 var renderOption = "topic";
@@ -175,14 +208,16 @@ function renderPublicationData(){
 	topic = $('.publication-topic');
 	switch(renderOption) {
 		case "type":
-			rendered_html_stack = renderPublicationBy(publicationTypes,publicationTypeNames);
+			renderPublicationHTML(publicationTypes,publicationTypeNames);
+			//renderPublicationCSS(publicationTypes,publicationTypeNames);
 			type.css('color','#FF6C0C');
 			type.parent().css('border-style','solid');
 			topic.css('color','black');
 			topic.parent().css('border-style','none');
 			break;
 		case "topic":
-			rendered_html_stack = renderPublicationBy(publicationTopics,publicationTopicNames);
+			renderPublicationHTML(publicationTopics,publicationTopicNames);
+			//renderPublicationCSS(publicationTopics,publicationTopicNames);
 			type.css('color','black');
 			type.parent().css('border-style','none');
 			topic.css('color','#FF6C0C');
@@ -190,7 +225,6 @@ function renderPublicationData(){
 			break;
 	}
 
-	$('#publications').html(rendered_html_stack);
 	loadLanguage(userLang);
 }
 
