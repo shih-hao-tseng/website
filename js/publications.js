@@ -171,16 +171,22 @@ function renderPublicationBy(items,item_names){
 
 var renderOption = "topic";
 function renderPublicationData(){
+	type = $('.publication-type');
+	topic = $('.publication-topic');
 	switch(renderOption) {
 		case "type":
 			rendered_html_stack = renderPublicationBy(publicationTypes,publicationTypeNames);
-			$('.publication-type').css('color','#FF6C0C');
-			$('.publication-topic').css('color','black');
+			type.css('color','#FF6C0C');
+			type.parent().css('border-style','solid');
+			topic.css('color','black');
+			topic.parent().css('border-style','none');
 			break;
 		case "topic":
 			rendered_html_stack = renderPublicationBy(publicationTopics,publicationTopicNames);
-			$('.publication-type').css('color','black');
-			$('.publication-topic').css('color','#FF6C0C');
+			type.css('color','black');
+			type.parent().css('border-style','none');
+			topic.css('color','#FF6C0C');
+			topic.parent().css('border-style','solid');
 			break;
 	}
 
