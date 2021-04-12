@@ -92,8 +92,8 @@ footer{
    min-height: 100%;
 }
 #header-fix{
-   min-height:60px;
-   visibility:hidden;
+   overflow: hidden;
+   visibility: hidden;
 }
 #page-content{
    margin:20px 5%;

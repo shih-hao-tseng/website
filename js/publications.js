@@ -108,7 +108,6 @@ function parseData (data) {
 				if (has_p) {
 					paper_string += "[<a class=\"publications-manuscript\" href=\"data/publications/manuscripts/" + surname + " - " + t + " - submitted.pdf\">manuscript</a>] ";
 				}
-
 				break;
 			case "c": // conferences
 				if ( !("d" in paper) ) {
@@ -146,10 +145,10 @@ function parseData (data) {
 		cachedPublicationPapers.push(paper_string);
 
 		// categorize the paper
-		if (paper.type in publicationTypes) {
-			publicationTypes[paper.type].push(paper_id);
+		if (paper_type in publicationTypes) {
+			publicationTypes[paper_type].push(paper_id);
 		} else {
-			publicationTypes[paper.type] = [paper_id]
+			publicationTypes[paper_type] = [paper_id]
 		}
 
 		if ("topic" in paper) {
