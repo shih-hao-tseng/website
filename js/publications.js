@@ -144,8 +144,8 @@ const publicationTypeNames = {
 	"d": "dissertation"
 }
 const publicationTopicNames = {
-	"control": "control",
-	"network": "network"
+	"network": "network",
+	"control": "control"
 }
 function renderPublicationBy(items,item_names){
 	rendered_html_stack = "";
