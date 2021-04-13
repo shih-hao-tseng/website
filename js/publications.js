@@ -181,24 +181,6 @@ function renderPublicationHTML(items,item_names){
 	$('#publications').html(rendered_html_stack);
 }
 
-function renderPublicationCSS(items,item_names){
-	// set the marks
-	for (item in item_names) {
-		if (!(item in items)) {
-			// enforcing the order
-			continue;
-		}
-		item_name = item_names[item];
-		capitalized_item_name = item_name.charAt(0).toUpperCase() + item_name.slice(1);
-		$('#'+capitalized_item_name+' li').each(function (li_index) {
-			paper_id = items[item][li_index];
-
-			// cannot be set like this
-			$(this).marker(cachedPublicationPaperMarks[paper_id]);
-		});
-	}
-}
-
 var renderOption = "topic";
 function renderPublicationData(){
 	type = $('.publication-type');
@@ -206,7 +188,6 @@ function renderPublicationData(){
 	switch(renderOption) {
 		case "type":
 			renderPublicationHTML(publicationTypes,publicationTypeNames);
-			//renderPublicationCSS(publicationTypes,publicationTypeNames);
 			type.css('color','#FF6C0C');
 			type.parent().css('border-style','solid');
 			topic.css('color','black');
@@ -214,7 +195,6 @@ function renderPublicationData(){
 			break;
 		case "topic":
 			renderPublicationHTML(publicationTopics,publicationTopicNames);
-			//renderPublicationCSS(publicationTopics,publicationTopicNames);
 			type.css('color','black');
 			type.parent().css('border-style','none');
 			topic.css('color','#FF6C0C');
