@@ -1,3 +1,19 @@
+#publications ul{
+   list-style-type:none;
+}
+#publications ul li{
+   margin-left: 2em;
+   padding-bottom:15px;
+   text-indent: -5em;
+}
+.publication-id{
+   display:inline-block;
+   margin: 0 0.5em 0 0;
+   width: 4.5em;
+   text-align: right;
+   font-weight: bold;
+   color:#FF6C0C;
+}
 #publication-sort-options div{
    height:40px;
    vertical-align:middle;
@@ -21,8 +37,4 @@
    color:#FF6C0C; 
    border-radius: 10px;
    border-style: solid;
-}
-#publications ul li::before{
-   margin-right: 0.5em;
-   text-align: right;
 }

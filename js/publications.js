@@ -174,9 +174,7 @@ function renderPublicationHTML(items,item_names){
 		rendered_html_stack += "<ul id=\""+capitalized_item_name+"\">";
 		
 		items[item].forEach(function (paper_id, index) {
-			rendered_html_stack += "<li style=\"padding-bottom:15px;\">";
-			rendered_html_stack += cachedPublicationPapers[paper_id];
-			rendered_html_stack += "</li>";
+			rendered_html_stack += "<li><div class=\"publication-id\">["+cachedPublicationPaperMarks[paper_id]+"]</div>"+cachedPublicationPapers[paper_id]+"</li>";
 		});
 		rendered_html_stack += "</ul>";
 	}
