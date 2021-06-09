@@ -30,6 +30,7 @@
 	"a":["me","S. Han","A. Wierman"],
 	"t":"In-Network Freshness Control: Trading Throughput for Freshness",
 	"tags":["nop"],
+	"arxiv":"2106.02156",
 	"type":"sj",
 	"topic":"network"
 },{
