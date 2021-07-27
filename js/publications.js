@@ -126,6 +126,8 @@ function parseData (data) {
 					if (has_s) {
 						paper_string += "[<a class=\"publications-slides\" href=\"data/publications/slides/Tseng " + y + paper.d + " - slides - " + t + ".pdf\">slides</a>] ";
 					}
+				} else {
+					has_p = false;
 				}
 				break;
 			case "j": // journal
@@ -139,7 +141,7 @@ function parseData (data) {
 				paper_string += "[<a class=\"publications-link\" href=\"" + paper.l + "\">link</a>] ";
 				break;
 		}
-		if ( "arxiv" in paper ){
+		if ( ("arxiv" in paper) and !has_p ){
 			paper_string += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + paper.arxiv + "\">arXiv</a>]";
 		}
 		cachedPublicationPapers.push(paper_string);
