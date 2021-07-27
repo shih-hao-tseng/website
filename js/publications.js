@@ -126,8 +126,6 @@ function parseData (data) {
 					if (has_s) {
 						paper_string += "[<a class=\"publications-slides\" href=\"data/publications/slides/Tseng " + y + paper.d + " - slides - " + t + ".pdf\">slides</a>] ";
 					}
-				} else {
-					has_p = false;
 				}
 				break;
 			case "j": // journal
