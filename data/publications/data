@@ -1,4 +1,10 @@
 [ {
+	"a":["L. E. Conger","me"],
+	"t":"Output-Feedback System Level Synthesis via Dynamic Programming",
+	"tags":["nos","nop"],
+	"type":"sc",
+	"topic":"control"
+},{
 	"a":["C. Amo Alonso","me"],
 	"t":"Effective GPU Parallelization of Distributed and Localized Model Predictive Control",
 	"tags":["nop"],
