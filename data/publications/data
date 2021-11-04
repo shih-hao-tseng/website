@@ -2,6 +2,7 @@
 	"a":["L. E. Conger","me"],
 	"t":"Output-Feedback System Level Synthesis via Dynamic Programming",
 	"tags":["nos","nop"],
+	"arxiv":"2111.00098",
 	"type":"sc",
 	"topic":"control"
 },{
