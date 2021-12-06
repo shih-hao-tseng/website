@@ -1,4 +1,11 @@
 [ {
+	"a":["me"],
+	"t":"Realization-Stability Lemma for Controller Synthesis",
+	"tags":["nos","nop"],
+	"arxiv":"2112.02005",
+	"type":"sc",
+	"topic":"control"
+},{
 	"a":["L. E. Conger","me"],
 	"t":"Output-Feedback System Level Synthesis via Dynamic Programming",
 	"tags":["nos","nop"],
