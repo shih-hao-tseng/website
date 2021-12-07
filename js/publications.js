@@ -188,7 +188,7 @@ function renderPublicationData(){
 	switch(renderOption) {
 		case "type":
 			renderPublicationHTML(publicationTypes,publicationTypeNames);
-			type.css('color','#FF6C0C');
+			type.css('color','#4267B2');
 			type.parent().css('border-style','solid');
 			topic.css('color','black');
 			topic.parent().css('border-style','none');
@@ -197,7 +197,7 @@ function renderPublicationData(){
 			renderPublicationHTML(publicationTopics,publicationTopicNames);
 			type.css('color','black');
 			type.parent().css('border-style','none');
-			topic.css('color','#FF6C0C');
+			topic.css('color','#4267B2');
 			topic.parent().css('border-style','solid');
 			break;
 	}

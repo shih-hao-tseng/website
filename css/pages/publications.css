@@ -12,7 +12,7 @@
    width: 4.5em;
    text-align: right;
    font-weight: bold;
-   color:#FF6C0C;
+   color:#4267B2;
 }
 #publication-sort-options div{
    height:40px;
@@ -34,7 +34,7 @@
    vertical-align:middle;
    cursor:pointer;
 
-   color:#FF6C0C; 
+   color:#4267B2; 
    border-radius: 10px;
    border-style: solid;
 }

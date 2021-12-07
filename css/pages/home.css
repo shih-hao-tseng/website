@@ -31,13 +31,13 @@
    vertical-align: middle;
    border-radius: 10px;
    border-style: solid;
-   color: #FF6C0C;
+   color: #4267B2;
    text-align:center;
    text-decoration: none;
 }
 #resumes a:hover{
    color: white;
-   background-color:#FF6C0C;  /* Cornell: b01c2e; */
+   background-color:#4267B2;  /* Cornell: CC0033; Caltech: FF6C0C; */
 }
 #resumes a i{
    display: inline-block;
