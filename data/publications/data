@@ -24,6 +24,7 @@
 	"t":"A General Approach to Robust Controller Analysis and Synthesis",
 	"b":"Proc. IEEE CDC",
 	"y":2021,
+	"d":"1215",
 	"arxiv":"2103.13650",
 	"type":"c",
 	"topic":"control"
