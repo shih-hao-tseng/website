@@ -6,20 +6,6 @@
 	"type":"sc",
 	"topic":"control"
 },{
-	"a":["L. E. Conger","me"],
-	"t":"Output-Feedback System Level Synthesis via Dynamic Programming",
-	"tags":["nos","nop"],
-	"arxiv":"2111.00098",
-	"type":"sc",
-	"topic":"control"
-},{
-	"a":["C. Amo Alonso","me"],
-	"t":"Effective GPU Parallelization of Distributed and Localized Model Predictive Control",
-	"tags":["nop"],
-	"arxiv":"2103.14990",
-	"type":"sc",
-	"topic":"control"
-},{
 	"a":["me"],
 	"t":"A General Approach to Robust Controller Analysis and Synthesis",
 	"b":"Proc. IEEE CDC",
@@ -49,6 +35,27 @@
 	"arxiv":"2106.02156",
 	"type":"sj",
 	"topic":"network"
+},{
+	"a":["C. Amo Alonso","me"],
+	"t":"Effective GPU Parallelization of Distributed and Localized Model Predictive Control",
+	"b":"Proc. IEEE ICCA",
+	"award": "Best Student Paper Award",
+	"y":2022,
+	"d":"0628",
+	"tags":["nos","nop"],
+	"arxiv":"2103.14990",
+	"type":"c",
+	"topic":"control"
+},{
+	"a":["L. E. Conger","me"],
+	"t":"Output-Feedback System Level Synthesis via Dynamic Programming",
+	"b":"Proc. IEEE ACC",
+	"y":2022,
+	"d":"0610",
+	"tags":["nos","nop"],
+	"arxiv":"2111.00098",
+	"type":"c",
+	"topic":"control"
 },{
 	"a":["me"],
 	"t":"Realization, Internal Stability, and Controller Synthesis",

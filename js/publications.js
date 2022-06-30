@@ -50,6 +50,13 @@ function parseTitle (title,last = false) {
 	return "“" + title + ",”<br>";
 }
 
+function formatAward(paper) {
+	if ("award" in paper) {
+		return " <i style=\"color:#FF6C0C;\"><i class=\"fa fa-trophy f-1_5x\" aria-hidden=\"true\" color=\"yellow\"></i> " + paper.award + "</i>";
+	}
+	return "";
+}
+
 const publicationTypeNames = {
 	"s": "submitted",
 	"c": "conference",
@@ -96,7 +103,9 @@ function parseData (data) {
 			++type_counters[paper_sub_type];
 			cachedPublicationPaperMarks.push(paper_sub_type+type_counters[paper_sub_type].toString());
 		}
+		// has paper
 		has_p = true;
+		// has slides
 		has_s = true;
 		if ("tags" in paper) {
 			has_p = !paper.tags.includes("nop");
@@ -118,6 +127,7 @@ function parseData (data) {
 				//if ( "r" in paper ) { // 接受率
 				//	paper_string += " (acceptance rate: " + paper.r + ")";
 				//}
+				paper_string += formatAward(paper);
 				paper_string += "<br>\n";
 				if ( "d" in paper ) {
 					if (has_p) {
@@ -129,7 +139,9 @@ function parseData (data) {
 				}
 				break;
 			case "j": // journal
-				paper_string += "in <i>" + paper.b + "</i>, " + y + ".<br>\n";
+				paper_string += "in <i>" + paper.b + "</i>, " + y + ".";
+				paper_string += formatAward(paper);
+				paper_string += "<br>\n";
 				if (has_p){
 					paper_string += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + surname + " " + y + " - " + t + " - author version.pdf\">paper</a>] ";
 				}
