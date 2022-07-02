@@ -6,15 +6,6 @@
 	"type":"sc",
 	"topic":"control"
 },{
-	"a":["me"],
-	"t":"A General Approach to Robust Controller Analysis and Synthesis",
-	"b":"Proc. IEEE CDC",
-	"y":2021,
-	"d":"1215",
-	"arxiv":"2103.13650",
-	"type":"c",
-	"topic":"control"
-},{
 	"a":["me","J. Anderson"],
 	"t":"Synthesis to Deployment: Cyber-Physical Control Architectures",
 	"tags":["nop"],
@@ -54,6 +45,15 @@
 	"d":"0610",
 	"tags":["nos","nop"],
 	"arxiv":"2111.00098",
+	"type":"c",
+	"topic":"control"
+},{
+	"a":["me"],
+	"t":"A General Approach to Robust Controller Analysis and Synthesis",
+	"b":"Proc. IEEE CDC",
+	"y":2021,
+	"d":"1215",
+	"arxiv":"2103.13650",
 	"type":"c",
 	"topic":"control"
 },{
