@@ -22,9 +22,11 @@
 },{
 	"a":["me","S. Han","A. Wierman"],
 	"t":"In-Network Freshness Control: Trading Throughput for Freshness",
+	"b":"ACM TOMPECS",
+	"y":2022,
 	"tags":["nop"],
 	"arxiv":"2106.02156",
-	"type":"sj",
+	"type":"j",
 	"topic":"network"
 },{
 	"a":["C. Amo Alonso","me"],
