@@ -24,6 +24,7 @@
 	"t":"Trading Throughput for Freshness: Freshness-Aware Traffic Engineering and In-Network Freshness Control",
 	"b":"ACM TOMPECS",
 	"y":2022,
+	"l":"https://dl.acm.org/doi/abs/10.1145/3576919",
 	"tags":["nop"],
 	"arxiv":"2106.02156",
 	"type":"j",

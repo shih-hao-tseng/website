@@ -57,6 +57,29 @@ function formatAward(paper) {
 	return "";
 }
 
+function formatPublicationLinks(link_type, link_data) {
+	// return the link html string
+	final_link = ""
+	switch(link_type) {
+		case "manuscript":
+			final_link = "data/publications/manuscripts/" + link_data + " - submitted.pdf";
+			break;
+		case "paper":
+			final_link = "data/publications/papers/" + link_data + " - author version.pdf";
+			break;
+		case "slides":
+			final_link = "data/publications/slides/Tseng " + link_data + ".pdf";
+			break;
+		case "arXiv":
+			final_link = "https://arxiv.org/abs/" + link_data;
+			break;
+		case "link":
+			final_link = link_data;
+			break;		
+	}
+	return "[<a class=\"publications-" + link_type.toLowerCase() + "\" href=\"" + final_link + "\">" + link_type + "</a>] "
+}
+
 const publicationTypeNames = {
 	"s": "submitted",
 	"c": "conference",
@@ -115,7 +138,7 @@ function parseData (data) {
 		switch (paper_type) {
 			case "s": // submitted
 				if (has_p) {
-					paper_string += "[<a class=\"publications-manuscript\" href=\"data/publications/manuscripts/" + surname + " - " + t + " - submitted.pdf\">manuscript</a>] ";
+					paper_string += formatPublicationLinks("manuscript", surname + " - " + t);
 				}
 				break;
 			case "c": // conferences
@@ -131,10 +154,10 @@ function parseData (data) {
 				paper_string += "<br>\n";
 				if ( "d" in paper ) {
 					if (has_p) {
-						paper_string += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + surname + " " + y + " - " + t + " - author version.pdf\">paper</a>] ";
+						paper_string += formatPublicationLinks("paper", surname + " " + y + " - " + t);
 					}
 					if (has_s) {
-						paper_string += "[<a class=\"publications-slides\" href=\"data/publications/slides/Tseng " + y + paper.d + " - slides - " + t + ".pdf\">slides</a>] ";
+						paper_string += formatPublicationLinks("slides", y + paper.d + " - slides - " + t);
 					}
 				}
 				break;
@@ -143,16 +166,18 @@ function parseData (data) {
 				paper_string += formatAward(paper);
 				paper_string += "<br>\n";
 				if (has_p){
-					paper_string += "[<a class=\"publications-paper\" href=\"data/publications/papers/" + surname + " " + y + " - " + t + " - author version.pdf\">paper</a>] ";
+					paper_string += formatPublicationLinks("paper", surname + " " + y + " - " + t);
 				}
 				break;
 			case "d": // dissertation
 				paper_string += " " + y + ".<br>\n";
-				paper_string += "[<a class=\"publications-link\" href=\"" + paper.l + "\">link</a>] ";
 				break;
 		}
 		if ( ("arxiv" in paper) && !has_p ){
-			paper_string += "[<a class=\"publications-arxiv\" href=\"https://arxiv.org/abs/" + paper.arxiv + "\">arXiv</a>]";
+			paper_string += formatPublicationLinks("arXiv", paper.arxiv);
+		}
+		if ("l" in paper) {
+			paper_string += formatPublicationLinks("link", paper.l);
 		}
 		cachedPublicationPapers.push(paper_string);
 
