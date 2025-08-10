@@ -20,6 +20,15 @@
 	"type":"sc",
 	"topic":"control"
 },{
+	"a":["Y. Lin", "M. Gawish", "me", "L. Gao", "C. Zhao", "J. Tracey", "S. Shao", "H. Kim", "Y. Zhang"],
+	"t":"Centralium: A Hybrid Route-Planning Framework for Large-Scale Data Center Network Migrations",
+	"b":"ACM SIGCOMM",
+	"y":2025,
+	"d":"0909",
+	"tags":["nos","nop"],
+	"type":"c",
+	"topic":"network"
+},{
 	"a":["me","S. Han","A. Wierman"],
 	"t":"Trading Throughput for Freshness: Freshness-Aware Traffic Engineering and In-Network Freshness Control",
 	"b":"ACM TOMPECS",
